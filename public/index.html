@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just Dance Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="app">
+    <!-- TITLE SCREEN -->
+    <div id="screen-title" class="screen active">
+      <div class="title-content">
+        <div class="jd-logo-title">
+          <div class="jd-text-main">JUST<br>DANCE</div>
+          <div class="jd-text-year">2022</div>
+        </div>
+        <div class="title-health-warning">
+          <p><strong>AVISO PARA LA SALUD</strong></p>
+          <p>Algunas personas son propensas a ataques epilépticos o pérdida de consciencia al exponerse a ciertas luces parpadeantes o dibujos luminosos en la vida diaria.</p>
+          <p>Esas personas pueden tener un ataque mientras ven imágenes o juegan con ciertos videojuegos. Esto puede suceder incluso si la persona no tiene un historial médico de epilepsia o nunca ha tenido ataques epilépticos. Si usted o alguien de su familia ha tenido antes síntomas relacionados con la epilepsia (ataques o pérdida de consciencia) al exponerse a luces parpadeantes, consulte a su médico antes de jugar. Si usted o sus hijos experimentan algunos de los siguientes síntomas: mareos, visión borrosa, tics nerviosos en los ojos o en los músculos, pérdida de consciencia, desorientación, cualquier movimiento involuntario o convulsión mientras juega con un videojuego, interrumpa <strong>INMEDIATAMENTE</strong> su uso y consulte a su médico.</p>
+        </div>
+        <div class="title-press-start">
+          <span class="title-btn-icon">A</span>
+          <span>Pulsa para empezar</span>
+        </div>
+        <div class="title-spinner"></div>
+      </div>
+    </div>
+
+    <!-- MAIN MENU -->
+    <div id="screen-menu" class="screen">
+      <div class="menu-bg">
+        <div class="menu-diamonds">
+          <div class="diamond coach-diamond" style="--x:15%;--y:20%;--s:0.8;--c:#ff6b9d;"><div class="diamond-inner"></div></div>
+          <div class="diamond coach-diamond" style="--x:35%;--y:10%;--s:1.0;--c:#4ecdc4;"><div class="diamond-inner"></div></div>
+          <div class="diamond coach-diamond" style="--x:55%;--y:15%;--s:0.9;--c:#ffe66d;"><div class="diamond-inner"></div></div>
+          <div class="diamond coach-diamond" style="--x:75%;--y:25%;--s:0.7;--c:#a8e6cf;"><div class="diamond-inner"></div></div>
+          <div class="diamond coach-diamond" style="--x:25%;--y:60%;--s:0.85;--c:#c7ceea;"><div class="diamond-inner"></div></div>
+          <div class="diamond coach-diamond" style="--x:50%;--y:55%;--s:1.1;--c:#ffd93d;"><div class="diamond-inner"></div></div>
+          <div class="diamond coach-diamond" style="--x:70%;--y:65%;--s:0.75;--c:#ff8b94;"><div class="diamond-inner"></div></div>
+        </div>
+      </div>
+      <div class="menu-logo-center">
+        <div class="jd-logo-title" style="transform:scale(1.3);">
+          <div class="jd-text-main">JUST<br>DANCE</div>
+          <div class="jd-text-year">2022</div>
+        </div>
+        <div class="menu-subtitle">A UBISOFT ORIGINAL</div>
+      </div>
+      <div class="menu-buttons">
+        <button class="menu-btn" data-menu="kids">
+          <span class="menu-btn-icon">&#128118;</span>
+          <span>Kids</span>
+        </button>
+        <button class="menu-btn menu-btn-main" data-menu="justdance">
+          <span class="menu-btn-icon">&#127758;</span>
+          <span class="menu-btn-title">Just Dance</span>
+          <span class="menu-btn-desc">Disfruta de tus canciones con los tuyos!</span>
+        </button>
+        <button class="menu-btn" data-menu="quickplay">
+          <span class="menu-btn-icon">&#9654;</span>
+          <span>Quick Play</span>
+        </button>
+      </div>
+      <div class="menu-footer">
+        <span><span class="btn-hint">A</span> Seleccionar</span>
+        <span><span class="btn-hint">B</span> Atrás</span>
+      </div>
+    </div>
+
+    <!-- SONG SELECTION -->
+    <div id="screen-selection" class="screen">
+      <aside class="sidebar">
+        <div class="sidebar-item active" data-tab="home"><span class="sidebar-icon">&#8962;</span></div>
+        <div class="sidebar-item" data-tab="playlists"><span class="sidebar-icon">&#128366;</span></div>
+        <div class="sidebar-item" data-tab="songs"><span class="sidebar-icon">&#127925;</span></div>
+        <div class="sidebar-item" data-tab="search"><span class="sidebar-icon">&#128269;</span></div>
+        <div class="sidebar-item sidebar-avatar" data-tab="profile">
+          <div class="avatar-placeholder">JD</div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="selection-header">
+          <h1 class="selection-title">JUST DANCE <span class="selection-year">2022</span></h1>
+          <div class="selection-sort">Ordenadas por: <span class="sort-active">Relevancia</span></div>
+        </header>
+        <div class="songs-scroll-container">
+          <div id="songs-grid" class="songs-row"></div>
+        </div>
+        <div id="preview-panel" class="preview-panel">
+          <div class="preview-card">
+            <div class="preview-left">
+              <img id="preview-cover" class="preview-cover" src="" alt="">
+            </div>
+            <div class="preview-center">
+              <div class="preview-video-wrap">
+                <video id="preview-video" muted loop playsinline></video>
+              </div>
+              <div class="preview-info-bar">
+                <span id="preview-version">Just Dance 2022</span>
+                <span id="preview-difficulty" class="preview-difficulty"></span>
+              </div>
+            </div>
+            <div class="preview-right">
+              <div class="preview-song-title" id="preview-title"></div>
+              <div class="preview-song-artist" id="preview-artist"></div>
+              <div class="preview-star-icon">
+                <svg viewBox="0 0 100 100" class="preview-dancer-icon">
+                  <path d="M50 10 L55 30 L75 30 L60 42 L65 60 L50 48 L35 60 L40 42 L25 30 L45 30 Z" fill="#e91e8c"/>
+                  <circle cx="50" cy="18" r="8" fill="#e91e8c"/>
+                </svg>
+              </div>
+              <p class="preview-msg">Juega esta canción para intentar ser el mejor bailarín de la semana!</p>
+            </div>
+          </div>
+          <button id="play-song-btn" class="play-song-btn">
+            <span class="btn-hint-circle">A</span>
+            <span>A BAILAR!</span>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- COACH / MODE SELECTION -->
+    <div id="screen-coach" class="screen">
+      <div class="coach-bg">
+        <img id="coach-bkg" src="" alt="">
+      </div>
+      <div class="coach-overlay"></div>
+      <div class="coach-top-info">
+        <img id="coach-cover-small" class="coach-cover-small" src="" alt="">
+        <div class="coach-song-text">
+          <div id="coach-song-title" class="coach-song-title"></div>
+          <div id="coach-song-artist" class="coach-song-artist"></div>
+        </div>
+      </div>
+      <div class="coach-prompt">Usa <span class="btn-hint-circle">A</span> para elegir a tu profe.</div>
+      <div id="coach-options-big" class="coach-options-big"></div>
+      <div class="coach-bottom-bar">
+        <div class="coach-player-card">
+          <div class="coach-ctrl-icon">
+            <div class="ctrl-dot"></div>
+            <div class="ctrl-dots">
+              <div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div class="coach-player-avatar">JD</div>
+          <div class="coach-player-name">Player 1</div>
+        </div>
+        <div class="coach-footer-hints">
+          <span><span class="btn-hint">B</span> Atrás</span>
+          <span><span class="btn-hint">X</span> Cambiar Dancer Card</span>
+        </div>
+        <div class="coach-loading">Cargando, espera... <span class="coach-spinner"></span></div>
+      </div>
+    </div>
+
+    <!-- GAMEPLAY -->
+    <div id="screen-gameplay" class="screen">
+      <video id="game-video" class="game-video" playsinline muted></video>
+      <audio id="game-audio" preload="auto"></audio>
+      <div class="game-hud">
+        <!-- Top Left: Player -->
+        <div class="hud-player">
+          <div class="player-ctrl">
+            <div class="ctrl-dot green"></div>
+            <div class="ctrl-dots">
+              <div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+          <div class="player-name-box">
+            <div class="player-name">Player 1</div>
+            <div class="player-bar"></div>
+          </div>
+        </div>
+
+        <!-- Center: Rating -->
+        <div class="hud-rating-area">
+          <div id="rating-display" class="rating-display"></div>
+        </div>
+
+        <!-- Left Side: Stars -->
+        <div class="hud-stars">
+          <div class="star-progress-wrap">
+            <div id="star-progress" class="star-progress"></div>
+          </div>
+          <div id="star-list" class="star-list">
+            <div class="star-item" data-star="1"><span class="star-shape">&#9733;</span></div>
+            <div class="star-item" data-star="2"><span class="star-shape">&#9733;</span></div>
+            <div class="star-item" data-star="3"><span class="star-shape">&#9733;</span></div>
+            <div class="star-item" data-star="4"><span class="star-shape">&#9733;</span></div>
+            <div class="star-item" data-star="5"><span class="star-shape">&#9733;</span></div>
+          </div>
+        </div>
+
+        <!-- Gold Flash -->
+        <div id="gold-flash" class="gold-flash"></div>
+
+        <!-- Bottom Left: Lyrics -->
+        <div class="hud-lyrics">
+          <div id="lyrics-container" class="lyrics-container"></div>
+        </div>
+
+        <!-- Bottom Right: Pictograms -->
+        <div class="hud-pictos">
+          <div id="picto-track" class="picto-track"></div>
+          <div class="picto-hit-line"></div>
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown-overlay" id="countdown-overlay">
+        <div id="countdown-number" class="countdown-number"></div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="screen-results" class="screen">
+      <div class="results-container">
+        <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+        <div class="results-card">
+          <h1 class="results-title">RESULTADOS</h1>
+          <div class="results-score-section">
+            <div id="results-stars" class="results-stars"></div>
+            <div id="results-score" class="results-score">0</div>
+            <div id="results-title" class="results-rank-title"></div>
+          </div>
+          <div class="results-stats">
+            <div class="stat-item">
+              <span class="stat-value" id="stat-perfects">0</span>
+              <span class="stat-label">PERFECTS</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="stat-supers">0</span>
+              <span class="stat-label">SUPERS</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="stat-goods">0</span>
+              <span class="stat-label">GOODS</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value" id="stat-misses">0</span>
+              <span class="stat-label">MISSES</span>
+            </div>
+            <div class="stat-item gold-stat">
+              <span class="stat-value" id="stat-golds">0</span>
+              <span class="stat-label">GOLD MOVES</span>
+            </div>
+          </div>
+          <div class="results-actions">
+            <button id="retry-btn" class="btn-action btn-retry">REINTENTAR</button>
+            <button id="back-btn" class="btn-action btn-back">VOLVER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
