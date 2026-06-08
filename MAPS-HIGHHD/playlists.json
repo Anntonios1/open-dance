@@ -1,0 +1,87 @@
+{
+  "playlistCluster": [
+    {
+      "name": "Just Dance Next",
+      "maps": [
+        {
+          "name": "boysaliar"
+        },
+		{
+          "name": "despecha"
+        },
+		{
+          "name": "farfalle"
+        },
+		{
+          "name": "taintedlove"
+        },
+		{
+          "name": "asitwas"
+        },
+		{
+          "name": "lockedout"
+        },
+		{
+          "name": "numb"
+        },
+		{
+          "name": "telephone"
+        },
+		{
+          "name": "witch"
+        },
+		{
+          "name": "bloodymary"
+        },
+		{
+          "name": "aqueda"
+        },
+		{
+          "name": "canttameher"
+        },
+		{
+          "name": "gimmemore"
+        },
+		{
+          "name": "dontchaalt"
+        },
+		{
+          "name": "wasabialt"
+        },
+		{
+          "name": "bangarang"
+        },
+		{
+          "name": "mood"
+        },
+		{
+          "name": "error"
+        },
+		{
+          "name": "papaoutai"
+        },
+		{
+          "name": "maneater"
+        },
+		{
+          "name": "itsyou"
+        },
+		{
+          "name": "werwhowerdlc"
+        },
+		{
+          "name": "builtforthis"
+        },
+		{
+          "name": "greedy"
+        },
+		{
+          "name": "skaterboy"
+        },
+		{
+          "name": "woof"
+        }
+      ]
+    }
+  ]
+}

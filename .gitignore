@@ -1,4 +1,7 @@
 node_modules/
-MAPS-HIGHHD/
+MAPS-HIGHHD/*
+!MAPS-HIGHHD/itsyou/
+!MAPS-HIGHHD/itsyou/**
+!MAPS-HIGHHD/playlists.json
 .DS_Store
 npm-debug.log*

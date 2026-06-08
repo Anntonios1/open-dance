@@ -1,0 +1,2657 @@
+{
+  "lyricColor": [
+    0.03529412,
+    0.7254902,
+    0.980392158,
+    1.0
+  ],
+  "lyrics": [
+    {
+      "time": 4.335,
+      "duration": 0.352,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 4.687,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 6.21,
+      "duration": 0.352,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 6.562,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 8.085,
+      "duration": 0.352,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 8.437,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 9.96,
+      "duration": 0.352,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 10.312,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 11.835,
+      "duration": 0.352,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 12.187,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 13.71,
+      "duration": 0.352,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 14.062,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 15.585,
+      "duration": 0.352,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 15.937,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 17.46,
+      "duration": 0.352,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 17.812,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 34.394,
+      "duration": 0.293,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 34.687,
+      "duration": 0.235,
+      "text": "you ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 34.922,
+      "duration": 0.235,
+      "text": "I ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 35.156,
+      "duration": 0.235,
+      "text": "wan",
+      "isLineEnding": 0
+    },
+    {
+      "time": 35.39,
+      "duration": 0.235,
+      "text": "na ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 35.624,
+      "duration": 0.176,
+      "text": "kiss ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 35.8,
+      "duration": 0.176,
+      "text": "good",
+      "isLineEnding": 0
+    },
+    {
+      "time": 35.976,
+      "duration": 0.41,
+      "text": "night",
+      "isLineEnding": 1
+    },
+    {
+      "time": 36.386,
+      "duration": 0.176,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 36.562,
+      "duration": 0.235,
+      "text": "you ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 36.797,
+      "duration": 0.235,
+      "text": "I ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 37.031,
+      "duration": 0.235,
+      "text": "wan",
+      "isLineEnding": 0
+    },
+    {
+      "time": 37.265,
+      "duration": 0.235,
+      "text": "na ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 37.499,
+      "duration": 0.235,
+      "text": "hold ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 37.734,
+      "duration": 0.235,
+      "text": "real ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 37.968,
+      "duration": 0.235,
+      "text": "tight",
+      "isLineEnding": 1
+    },
+    {
+      "time": 38.32,
+      "duration": 0.117,
+      "text": "A ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 38.437,
+      "duration": 0.235,
+      "text": "feel",
+      "isLineEnding": 0
+    },
+    {
+      "time": 38.672,
+      "duration": 0.235,
+      "text": "ing ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 38.906,
+      "duration": 0.235,
+      "text": "deep ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 39.14,
+      "duration": 0.235,
+      "text": "in",
+      "isLineEnding": 0
+    },
+    {
+      "time": 39.374,
+      "duration": 0.176,
+      "text": "side ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 39.55,
+      "duration": 0.176,
+      "text": "our ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 39.726,
+      "duration": 0.352,
+      "text": "souls ",
+      "isLineEnding": 1
+    },
+    {
+      "time": 40.195,
+      "duration": 0.117,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 40.312,
+      "duration": 0.235,
+      "text": "got ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 40.547,
+      "duration": 0.235,
+      "text": "me ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 40.781,
+      "duration": 0.235,
+      "text": "lo",
+      "isLineEnding": 0
+    },
+    {
+      "time": 41.015,
+      "duration": 0.235,
+      "text": "sing ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 41.249,
+      "duration": 0.176,
+      "text": "all ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 41.425,
+      "duration": 0.176,
+      "text": "con",
+      "isLineEnding": 0
+    },
+    {
+      "time": 41.659,
+      "duration": 0.293,
+      "text": "trol",
+      "isLineEnding": 1
+    },
+    {
+      "time": 41.953,
+      "duration": 0.235,
+      "text": "Whoa ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 42.187,
+      "duration": 0.137,
+      "text": "oh ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 42.89,
+      "duration": 0.235,
+      "text": "whoa ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 43.124,
+      "duration": 0.235,
+      "text": "oh",
+      "isLineEnding": 1
+    },
+    {
+      "time": 43.828,
+      "duration": 0.235,
+      "text": "Whoa ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 44.062,
+      "duration": 0.137,
+      "text": "oh ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 44.765,
+      "duration": 0.235,
+      "text": "whoa ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 44.999,
+      "duration": 0.235,
+      "text": "oh",
+      "isLineEnding": 1
+    },
+    {
+      "time": 45.703,
+      "duration": 0.235,
+      "text": "Whoa ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 45.937,
+      "duration": 0.137,
+      "text": "oh ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 46.64,
+      "duration": 0.235,
+      "text": "whoa ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 46.874,
+      "duration": 0.235,
+      "text": "oh",
+      "isLineEnding": 1
+    },
+    {
+      "time": 47.578,
+      "duration": 0.235,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 47.812,
+      "duration": 0.137,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 49.218,
+      "duration": 0.352,
+      "text": "Well ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 49.57,
+      "duration": 0.117,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 63.984,
+      "duration": 0.469,
+      "text": "Well ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 64.589,
+      "duration": 0.156,
+      "text": "you ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 64.746,
+      "duration": 0.176,
+      "text": "make ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 64.922,
+      "duration": 0.235,
+      "text": "my ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 65.156,
+      "duration": 0.235,
+      "text": "heart",
+      "isLineEnding": 1
+    },
+    {
+      "time": 65.39,
+      "duration": 0.235,
+      "text": "Jump ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 65.624,
+      "duration": 0.176,
+      "text": "up ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 65.8,
+      "duration": 0.176,
+      "text": "and ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 65.976,
+      "duration": 0.274,
+      "text": "down ",
+      "isLineEnding": 1
+    },
+    {
+      "time": 66.503,
+      "duration": 0.078,
+      "text": "You ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 66.582,
+      "duration": 0.215,
+      "text": "got ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 66.797,
+      "duration": 0.235,
+      "text": "me ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 67.031,
+      "duration": 0.235,
+      "text": "spin",
+      "isLineEnding": 0
+    },
+    {
+      "time": 67.265,
+      "duration": 0.215,
+      "text": "nin' ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 67.479,
+      "duration": 0.215,
+      "text": "all ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 67.694,
+      "duration": 0.117,
+      "text": "aro",
+      "isLineEnding": 0
+    },
+    {
+      "time": 67.812,
+      "duration": 0.254,
+      "text": "und ",
+      "isLineEnding": 1
+    },
+    {
+      "time": 68.378,
+      "duration": 0.059,
+      "text": "You ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 68.437,
+      "duration": 0.235,
+      "text": "thrill ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 68.672,
+      "duration": 0.235,
+      "text": "me ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 68.906,
+      "duration": 0.254,
+      "text": "ba",
+      "isLineEnding": 0
+    },
+    {
+      "time": 69.16,
+      "duration": 0.215,
+      "text": "by",
+      "isLineEnding": 1
+    },
+    {
+      "time": 69.374,
+      "duration": 0.235,
+      "text": "Through ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 69.609,
+      "duration": 0.117,
+      "text": "and ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 69.726,
+      "duration": 0.274,
+      "text": "through",
+      "isLineEnding": 1
+    },
+    {
+      "time": 70.253,
+      "duration": 0.117,
+      "text": "You ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 70.371,
+      "duration": 0.176,
+      "text": "got ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 70.547,
+      "duration": 0.235,
+      "text": "me ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 70.781,
+      "duration": 0.235,
+      "text": "break",
+      "isLineEnding": 0
+    },
+    {
+      "time": 71.015,
+      "duration": 0.235,
+      "text": "ing",
+      "isLineEnding": 1
+    },
+    {
+      "time": 71.249,
+      "duration": 0.235,
+      "text": "All ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 71.484,
+      "duration": 0.235,
+      "text": "the ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 71.718,
+      "duration": 0.137,
+      "text": "rules",
+      "isLineEnding": 1
+    },
+    {
+      "time": 72.187,
+      "duration": 0.235,
+      "text": "All ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 72.422,
+      "duration": 0.235,
+      "text": "the ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 72.656,
+      "duration": 0.137,
+      "text": "rules",
+      "isLineEnding": 1
+    },
+    {
+      "time": 73.124,
+      "duration": 0.235,
+      "text": "All ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 73.359,
+      "duration": 0.235,
+      "text": "the ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 73.593,
+      "duration": 0.137,
+      "text": "rules",
+      "isLineEnding": 1
+    },
+    {
+      "time": 74.062,
+      "duration": 0.235,
+      "text": "All ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 74.297,
+      "duration": 0.235,
+      "text": "the ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 74.531,
+      "duration": 0.137,
+      "text": "rules",
+      "isLineEnding": 1
+    },
+    {
+      "time": 74.999,
+      "duration": 0.235,
+      "text": "All ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 75.234,
+      "duration": 0.235,
+      "text": "the ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 75.468,
+      "duration": 0.137,
+      "text": "rules",
+      "isLineEnding": 1
+    },
+    {
+      "time": 76.406,
+      "duration": 8.438,
+      "text": "All...",
+      "isLineEnding": 1
+    },
+    {
+      "time": 85.078,
+      "duration": 0.235,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 85.312,
+      "duration": 0.235,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 86.718,
+      "duration": 0.352,
+      "text": "Well ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 87.07,
+      "duration": 0.117,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 101.894,
+      "duration": 0.293,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 102.187,
+      "duration": 0.235,
+      "text": "you ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 102.422,
+      "duration": 0.235,
+      "text": "I ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 102.656,
+      "duration": 0.235,
+      "text": "want ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 102.89,
+      "duration": 0.235,
+      "text": "here ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 103.124,
+      "duration": 0.176,
+      "text": "by ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 103.3,
+      "duration": 0.176,
+      "text": "my ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 103.476,
+      "duration": 0.41,
+      "text": "side",
+      "isLineEnding": 1
+    },
+    {
+      "time": 103.945,
+      "duration": 0.078,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 104.062,
+      "duration": 0.235,
+      "text": "you ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 104.297,
+      "duration": 0.235,
+      "text": "I ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 104.531,
+      "duration": 0.235,
+      "text": "need ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 104.765,
+      "duration": 0.235,
+      "text": "to ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 104.999,
+      "duration": 0.235,
+      "text": "sa",
+      "isLineEnding": 0
+    },
+    {
+      "time": 105.234,
+      "duration": 0.117,
+      "text": "tis",
+      "isLineEnding": 0
+    },
+    {
+      "time": 105.351,
+      "duration": 0.352,
+      "text": "fy",
+      "isLineEnding": 1
+    },
+    {
+      "time": 105.937,
+      "duration": 0.235,
+      "text": "When ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 106.172,
+      "duration": 0.235,
+      "text": "we ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 106.406,
+      "duration": 0.235,
+      "text": "kiss ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 106.64,
+      "duration": 0.235,
+      "text": "and ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 106.874,
+      "duration": 0.176,
+      "text": "swear ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 107.05,
+      "duration": 0.176,
+      "text": "it's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 107.226,
+      "duration": 0.352,
+      "text": "true",
+      "isLineEnding": 1
+    },
+    {
+      "time": 107.695,
+      "duration": 0.117,
+      "text": "You're ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 107.812,
+      "duration": 0.235,
+      "text": "lov",
+      "isLineEnding": 0
+    },
+    {
+      "time": 108.047,
+      "duration": 0.235,
+      "text": "ing ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 108.281,
+      "duration": 0.235,
+      "text": "me ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 108.515,
+      "duration": 0.235,
+      "text": "I'm ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 108.749,
+      "duration": 0.176,
+      "text": "lov",
+      "isLineEnding": 0
+    },
+    {
+      "time": 108.925,
+      "duration": 0.176,
+      "text": "ing ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 109.159,
+      "duration": 0.293,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 109.453,
+      "duration": 0.235,
+      "text": "Whoa ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 109.687,
+      "duration": 0.137,
+      "text": "oh",
+      "isLineEnding": 1
+    },
+    {
+      "time": 110.39,
+      "duration": 0.235,
+      "text": "Whoa ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 110.624,
+      "duration": 0.235,
+      "text": "oh",
+      "isLineEnding": 1
+    },
+    {
+      "time": 111.328,
+      "duration": 0.235,
+      "text": "Whoa ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 111.562,
+      "duration": 0.137,
+      "text": "oh",
+      "isLineEnding": 1
+    },
+    {
+      "time": 115.078,
+      "duration": 0.235,
+      "text": "It's ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 115.312,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 148.593,
+      "duration": 0.235,
+      "text": "B",
+      "isLineEnding": 0
+    },
+    {
+      "time": 148.828,
+      "duration": 0.235,
+      "text": "aby ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 149.062,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 152.343,
+      "duration": 0.235,
+      "text": "B",
+      "isLineEnding": 0
+    },
+    {
+      "time": 152.578,
+      "duration": 0.235,
+      "text": "aby ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 152.812,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 156.093,
+      "duration": 0.235,
+      "text": "B",
+      "isLineEnding": 0
+    },
+    {
+      "time": 156.328,
+      "duration": 0.235,
+      "text": "aby ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 156.562,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    },
+    {
+      "time": 159.843,
+      "duration": 0.235,
+      "text": "B",
+      "isLineEnding": 0
+    },
+    {
+      "time": 160.078,
+      "duration": 0.235,
+      "text": "aby ",
+      "isLineEnding": 0
+    },
+    {
+      "time": 160.312,
+      "duration": 0.469,
+      "text": "you",
+      "isLineEnding": 1
+    }
+  ],
+  "moves": [
+    {
+      "time": 4.218,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 4.687,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 5.156,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 5.624,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 6.093,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 6.562,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 7.031,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 7.499,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 7.968,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 8.437,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 8.906,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 9.374,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 9.843,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 10.312,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 10.781,
+      "duration": 0.469,
+      "name": "itsyou_mechanocircle",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 11.718,
+      "duration": 0.938,
+      "name": "itsyou_mechanodown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 12.89,
+      "duration": 0.938,
+      "name": "itsyou_mechanoup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 13.828,
+      "duration": 0.938,
+      "name": "itsyou_mechanodown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 14.765,
+      "duration": 0.938,
+      "name": "itsyou_mechanoup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 15.703,
+      "duration": 0.938,
+      "name": "itsyou_mechanodown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 16.64,
+      "duration": 0.938,
+      "name": "itsyou_mechanoup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 17.578,
+      "duration": 0.938,
+      "name": "itsyou_mechanodown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 18.515,
+      "duration": 0.938,
+      "name": "itsyou_mechanoup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 19.453,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 19.922,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 20.39,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 20.859,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 21.328,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 21.797,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 22.265,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 22.734,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 23.203,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 24.14,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 25.078,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 26.015,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 26.953,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 27.422,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 27.89,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 28.359,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 28.828,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 29.297,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 29.765,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 30.234,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 30.703,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 31.64,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 32.578,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 33.515,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 34.453,
+      "duration": 0.469,
+      "name": "itsyou_pointupbegin",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 36.093,
+      "duration": 0.704,
+      "name": "itsyou_pointdown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 37.968,
+      "duration": 0.704,
+      "name": "itsyou_pointup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 39.843,
+      "duration": 0.704,
+      "name": "itsyou_pointdown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 41.718,
+      "duration": 0.704,
+      "name": "itsyou_charlestonback",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 42.656,
+      "duration": 0.704,
+      "name": "itsyou_charlestonfront",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 43.359,
+      "duration": 0.704,
+      "name": "itsyou_charlestonback",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 44.297,
+      "duration": 0.704,
+      "name": "itsyou_charlestonfront",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 45.234,
+      "duration": 0.704,
+      "name": "itsyou_charlestonback",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 46.172,
+      "duration": 0.704,
+      "name": "itsyou_charlestonfront",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 47.343,
+      "duration": 0.704,
+      "name": "itsyou_itsyou",
+      "goldMove": 1,
+      "coachID": 0
+    },
+    {
+      "time": 49.453,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 49.922,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 50.39,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 50.859,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 51.328,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 51.797,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 52.265,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 52.734,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 53.203,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 54.14,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 55.078,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 56.015,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 56.953,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 57.422,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 57.89,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 58.359,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 58.828,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 59.297,
+      "duration": 0.469,
+      "name": "itsyou_pushupl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 59.765,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 60.234,
+      "duration": 0.469,
+      "name": "itsyou_pushupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 60.703,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 61.64,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 62.578,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 63.515,
+      "duration": 0.704,
+      "name": "itsyou_mechanowalkl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 64.453,
+      "duration": 0.469,
+      "name": "itsyou_pointupbegin",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 66.093,
+      "duration": 0.704,
+      "name": "itsyou_pointdown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 67.968,
+      "duration": 0.704,
+      "name": "itsyou_pointup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 69.843,
+      "duration": 0.704,
+      "name": "itsyou_pointdown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 71.953,
+      "duration": 0.469,
+      "name": "itsyou_hammerright",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 72.422,
+      "duration": 0.469,
+      "name": "itsyou_hammerright",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 72.89,
+      "duration": 0.469,
+      "name": "itsyou_hammerright",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 73.359,
+      "duration": 0.469,
+      "name": "itsyou_hammerrightturn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 75.234,
+      "duration": 0.469,
+      "name": "itsyou_hammerleftrurn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 75.703,
+      "duration": 0.469,
+      "name": "itsyou_hammerright",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 76.172,
+      "duration": 0.469,
+      "name": "itsyou_hammerrightturn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 77.109,
+      "duration": 0.469,
+      "name": "itsyou_hammerleftrurn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 77.578,
+      "duration": 0.469,
+      "name": "itsyou_hammerright",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 78.047,
+      "duration": 0.469,
+      "name": "itsyou_hammerrightturn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 78.984,
+      "duration": 0.469,
+      "name": "itsyou_hammerleftrurn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 79.453,
+      "duration": 0.469,
+      "name": "itsyou_hammerrightturn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 79.922,
+      "duration": 0.469,
+      "name": "itsyou_hammerleftrurn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 80.39,
+      "duration": 0.469,
+      "name": "itsyou_hammerrightturn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 80.859,
+      "duration": 0.469,
+      "name": "itsyou_hammerleftrurn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 81.328,
+      "duration": 0.469,
+      "name": "itsyou_hammerrightturn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 81.797,
+      "duration": 0.469,
+      "name": "itsyou_hammerleftrurn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 82.265,
+      "duration": 0.469,
+      "name": "itsyou_hammerrightturn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 82.734,
+      "duration": 0.469,
+      "name": "itsyou_hammerleftrurn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 83.203,
+      "duration": 0.469,
+      "name": "itsyou_hammerrightturn",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 83.672,
+      "duration": 1.172,
+      "name": "itsyou_hammerend",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 84.843,
+      "duration": 0.704,
+      "name": "itsyou_itsyouhammer",
+      "goldMove": 1,
+      "coachID": 0
+    },
+    {
+      "time": 86.953,
+      "duration": 0.469,
+      "name": "itsyou_footpunchl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 87.422,
+      "duration": 0.469,
+      "name": "itsyou_footpunchr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 87.89,
+      "duration": 0.469,
+      "name": "itsyou_footpunchl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 88.359,
+      "duration": 0.469,
+      "name": "itsyou_footpunchr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 88.828,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 89.297,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 89.765,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 90.234,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 94.453,
+      "duration": 0.469,
+      "name": "itsyou_footpunchl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 94.922,
+      "duration": 0.469,
+      "name": "itsyou_footpunchr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 95.39,
+      "duration": 0.469,
+      "name": "itsyou_footpunchl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 95.859,
+      "duration": 0.469,
+      "name": "itsyou_footpunchr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 96.328,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 96.797,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 97.265,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 97.734,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 101.953,
+      "duration": 0.469,
+      "name": "itsyou_pointupbegin",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 103.593,
+      "duration": 0.704,
+      "name": "itsyou_pointdown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 105.468,
+      "duration": 0.704,
+      "name": "itsyou_pointup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 107.343,
+      "duration": 0.704,
+      "name": "itsyou_pointdown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 109.218,
+      "duration": 0.704,
+      "name": "itsyou_charlestonback",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 110.156,
+      "duration": 0.704,
+      "name": "itsyou_charlestonfront",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 110.859,
+      "duration": 0.704,
+      "name": "itsyou_charlestonback",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 111.797,
+      "duration": 0.704,
+      "name": "itsyou_charlestonfront",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 112.734,
+      "duration": 0.704,
+      "name": "itsyou_charlestonback",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 113.672,
+      "duration": 0.704,
+      "name": "itsyou_charlestonfront",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 114.843,
+      "duration": 0.704,
+      "name": "itsyou_itsyou",
+      "goldMove": 1,
+      "coachID": 0
+    },
+    {
+      "time": 116.953,
+      "duration": 0.469,
+      "name": "itsyou_footpunchl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 117.422,
+      "duration": 0.469,
+      "name": "itsyou_footpunchr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 117.89,
+      "duration": 0.469,
+      "name": "itsyou_footpunchl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 118.359,
+      "duration": 0.469,
+      "name": "itsyou_footpunchr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 118.828,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 119.297,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 119.765,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 120.234,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 124.453,
+      "duration": 0.469,
+      "name": "itsyou_footpunchl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 124.922,
+      "duration": 0.469,
+      "name": "itsyou_footpunchr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 125.39,
+      "duration": 0.469,
+      "name": "itsyou_footpunchl",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 125.859,
+      "duration": 0.469,
+      "name": "itsyou_footpunchr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 126.328,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 126.797,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 127.265,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 127.734,
+      "duration": 0.469,
+      "name": "itsyou_cutr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 131.953,
+      "duration": 0.469,
+      "name": "itsyou_tecktoupfirst",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 132.422,
+      "duration": 0.469,
+      "name": "itsyou_tecktoside",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 132.89,
+      "duration": 0.469,
+      "name": "itsyou_tecktoup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 133.359,
+      "duration": 0.469,
+      "name": "itsyou_tecktohead",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 133.828,
+      "duration": 0.938,
+      "name": "itsyou_tecktobounce",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 134.765,
+      "duration": 0.938,
+      "name": "itsyou_tecktobounce",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 135.703,
+      "duration": 0.469,
+      "name": "itsyou_tecktoupfirst",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 136.172,
+      "duration": 0.469,
+      "name": "itsyou_tecktoside",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 136.64,
+      "duration": 0.469,
+      "name": "itsyou_tecktoup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 137.109,
+      "duration": 0.469,
+      "name": "itsyou_tecktohead",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 137.578,
+      "duration": 0.938,
+      "name": "itsyou_tecktobounce",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 138.515,
+      "duration": 0.938,
+      "name": "itsyou_tecktobounce",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 139.453,
+      "duration": 0.469,
+      "name": "itsyou_tecktoupfirst",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 139.922,
+      "duration": 0.469,
+      "name": "itsyou_tecktoside",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 140.39,
+      "duration": 0.469,
+      "name": "itsyou_tecktoup",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 140.859,
+      "duration": 0.469,
+      "name": "itsyou_tecktohead",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 141.328,
+      "duration": 0.938,
+      "name": "itsyou_tecktobounce",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 142.265,
+      "duration": 0.938,
+      "name": "itsyou_tecktobounce",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 143.203,
+      "duration": 0.938,
+      "name": "itsyou_smashhead",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 145.312,
+      "duration": 0.938,
+      "name": "itsyou_sundown",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 146.953,
+      "duration": 0.469,
+      "name": "itsyou_pointupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 147.422,
+      "duration": 0.469,
+      "name": "itsyou_pointupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 147.89,
+      "duration": 0.469,
+      "name": "itsyou_pointupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 148.359,
+      "duration": 0.469,
+      "name": "itsyou_pointuprend",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 148.828,
+      "duration": 0.469,
+      "name": "itsyou_fingerpull",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 149.297,
+      "duration": 0.938,
+      "name": "itsyou_fingerwalk",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 154.453,
+      "duration": 0.469,
+      "name": "itsyou_pointupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 154.922,
+      "duration": 0.469,
+      "name": "itsyou_pointupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 155.39,
+      "duration": 0.469,
+      "name": "itsyou_pointupr",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 155.859,
+      "duration": 0.469,
+      "name": "itsyou_pointuprend",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 156.328,
+      "duration": 0.469,
+      "name": "itsyou_fingerpull",
+      "goldMove": 0,
+      "coachID": 0
+    },
+    {
+      "time": 156.797,
+      "duration": 0.938,
+      "name": "itsyou_fingerwalk",
+      "goldMove": 0,
+      "coachID": 0
+    }
+  ],
+  "pictos": [
+    {
+      "time": 4.218,
+      "name": "mechanocircle_g"
+    },
+    {
+      "time": 11.718,
+      "name": "mechanodown_g"
+    },
+    {
+      "time": 12.909,
+      "name": "mechanoup_g"
+    },
+    {
+      "time": 19.687,
+      "name": "pushupl_g"
+    },
+    {
+      "time": 20.624,
+      "name": "pushupr_g"
+    },
+    {
+      "time": 23.437,
+      "name": "mechanowalkl_f"
+    },
+    {
+      "time": 25.312,
+      "name": "mechanowalkback_f"
+    },
+    {
+      "time": 27.187,
+      "name": "pushupl_g"
+    },
+    {
+      "time": 28.124,
+      "name": "pushupr_g"
+    },
+    {
+      "time": 30.937,
+      "name": "mechanowalkl_f"
+    },
+    {
+      "time": 32.812,
+      "name": "mechanowalkback_f"
+    },
+    {
+      "time": 34.687,
+      "name": "pointup_p"
+    },
+    {
+      "time": 36.562,
+      "name": "pointdown_p"
+    },
+    {
+      "time": 38.437,
+      "name": "pointup_p"
+    },
+    {
+      "time": 40.312,
+      "name": "pointdown_p"
+    },
+    {
+      "time": 42.187,
+      "name": "charlestonback_p"
+    },
+    {
+      "time": 43.124,
+      "name": "charlestonfront_p"
+    },
+    {
+      "time": 47.812,
+      "name": "itsyou_f"
+    },
+    {
+      "time": 49.687,
+      "name": "pushupl_g"
+    },
+    {
+      "time": 50.624,
+      "name": "pushupr_g"
+    },
+    {
+      "time": 53.437,
+      "name": "mechanowalkl_f"
+    },
+    {
+      "time": 55.312,
+      "name": "mechanowalkback_f"
+    },
+    {
+      "time": 57.187,
+      "name": "pushupl_g"
+    },
+    {
+      "time": 58.124,
+      "name": "pushupr_g"
+    },
+    {
+      "time": 60.937,
+      "name": "mechanowalkl_f"
+    },
+    {
+      "time": 62.812,
+      "name": "mechanowalkback_f"
+    },
+    {
+      "time": 64.687,
+      "name": "pointup_p"
+    },
+    {
+      "time": 66.562,
+      "name": "pointdown_p"
+    },
+    {
+      "time": 68.437,
+      "name": "pointup_p"
+    },
+    {
+      "time": 70.312,
+      "name": "pointdown_p"
+    },
+    {
+      "time": 72.187,
+      "name": "hammerright_g"
+    },
+    {
+      "time": 74.062,
+      "name": "hammerleft_g"
+    },
+    {
+      "time": 75.937,
+      "name": "hammerright_g"
+    },
+    {
+      "time": 76.874,
+      "name": "hammerleft_g"
+    },
+    {
+      "time": 79.179,
+      "name": "hammerright_g"
+    },
+    {
+      "time": 79.707,
+      "name": "hammerleft_g"
+    },
+    {
+      "time": 83.437,
+      "name": "hammerboth_g"
+    },
+    {
+      "time": 85.312,
+      "name": "itsyou_f"
+    },
+    {
+      "time": 87.187,
+      "name": "footpunchr_g"
+    },
+    {
+      "time": 87.656,
+      "name": "footpunchr2_p"
+    },
+    {
+      "time": 89.062,
+      "name": "cutr_f"
+    },
+    {
+      "time": 90.878,
+      "name": "footpunchl_g"
+    },
+    {
+      "time": 91.465,
+      "name": "footpunchl2_p"
+    },
+    {
+      "time": 92.812,
+      "name": "cutl_f"
+    },
+    {
+      "time": 94.687,
+      "name": "footpunchr_g"
+    },
+    {
+      "time": 95.156,
+      "name": "footpunchr2_p"
+    },
+    {
+      "time": 96.562,
+      "name": "cutr_f"
+    },
+    {
+      "time": 98.378,
+      "name": "footpunchl_g"
+    },
+    {
+      "time": 98.945,
+      "name": "footpunchl2_p"
+    },
+    {
+      "time": 100.312,
+      "name": "cutl_f"
+    },
+    {
+      "time": 102.187,
+      "name": "pointup_p"
+    },
+    {
+      "time": 104.062,
+      "name": "pointdown_p"
+    },
+    {
+      "time": 105.937,
+      "name": "pointup_p"
+    },
+    {
+      "time": 107.812,
+      "name": "pointdown_p"
+    },
+    {
+      "time": 109.687,
+      "name": "charlestonback_p"
+    },
+    {
+      "time": 110.624,
+      "name": "charlestonfront_p"
+    },
+    {
+      "time": 115.312,
+      "name": "itsyou_f"
+    },
+    {
+      "time": 117.187,
+      "name": "footpunchr_g"
+    },
+    {
+      "time": 117.656,
+      "name": "footpunchr2_p"
+    },
+    {
+      "time": 119.062,
+      "name": "cutr_f"
+    },
+    {
+      "time": 120.898,
+      "name": "footpunchl_g"
+    },
+    {
+      "time": 121.445,
+      "name": "footpunchl2_p"
+    },
+    {
+      "time": 122.812,
+      "name": "cutl_f"
+    },
+    {
+      "time": 124.687,
+      "name": "footpunchr_g"
+    },
+    {
+      "time": 125.156,
+      "name": "footpunchr2_p"
+    },
+    {
+      "time": 126.562,
+      "name": "cutr_f"
+    },
+    {
+      "time": 128.398,
+      "name": "footpunchl_g"
+    },
+    {
+      "time": 128.945,
+      "name": "footpunchl2_p"
+    },
+    {
+      "time": 130.312,
+      "name": "cutl_f"
+    },
+    {
+      "time": 132.187,
+      "name": "tecktoup_p"
+    },
+    {
+      "time": 132.656,
+      "name": "tecktoside_p"
+    },
+    {
+      "time": 133.124,
+      "name": "tecktoup_p"
+    },
+    {
+      "time": 133.593,
+      "name": "tecktohead_p"
+    },
+    {
+      "time": 134.062,
+      "name": "tecktohead_g"
+    },
+    {
+      "time": 135.937,
+      "name": "tecktoup_p"
+    },
+    {
+      "time": 136.406,
+      "name": "tecktoside_p"
+    },
+    {
+      "time": 136.874,
+      "name": "tecktoup_p"
+    },
+    {
+      "time": 137.343,
+      "name": "tecktohead_p"
+    },
+    {
+      "time": 137.812,
+      "name": "tecktohead_g"
+    },
+    {
+      "time": 143.437,
+      "name": "smashheadr_g"
+    },
+    {
+      "time": 144.374,
+      "name": "smashheadl_g"
+    },
+    {
+      "time": 145.312,
+      "name": "sundown_f"
+    },
+    {
+      "time": 147.187,
+      "name": "pointupr_punch"
+    },
+    {
+      "time": 149.062,
+      "name": "fingerpullr_f"
+    },
+    {
+      "time": 150.937,
+      "name": "pointupl_punch"
+    },
+    {
+      "time": 152.812,
+      "name": "fingerpulll_f"
+    },
+    {
+      "time": 154.687,
+      "name": "pointupr_punch"
+    },
+    {
+      "time": 156.562,
+      "name": "fingerpullr_f"
+    },
+    {
+      "time": 158.437,
+      "name": "pointupl_punch"
+    },
+    {
+      "time": 160.312,
+      "name": "fingerpulll_f"
+    },
+    {
+      "time": 162.187,
+      "name": "jump_jump"
+    },
+    {
+      "time": 163.124,
+      "name": "shakehands_shake"
+    },
+    {
+      "time": 164.531,
+      "name": "rotatehands_f"
+    }
+  ]
+}
