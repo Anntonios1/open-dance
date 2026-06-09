@@ -1,9 +1,13 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const db = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Habilitar parseo de JSON en peticiones POST/PUT
+app.use(express.json());
 
 // Servir archivos estáticos del frontend
 app.use(express.static(path.join(__dirname, 'public')));
@@ -14,22 +18,29 @@ app.use('/songs', express.static(path.join(__dirname, 'MAPS-HIGHHD')));
 // Ruta de API para obtener el catálogo de canciones
 app.get('/api/songs', (req, res) => {
   try {
-    const playlistsPath = path.join(__dirname, 'MAPS-HIGHHD', 'playlists.json');
-    if (!fs.existsSync(playlistsPath)) {
-      return res.status(404).json({ error: 'playlists.json no encontrado' });
+    const mapsDir = path.join(__dirname, 'MAPS-HIGHHD');
+    if (!fs.existsSync(mapsDir)) {
+      return res.status(404).json({ error: 'Directorio MAPS-HIGHHD no encontrado' });
     }
 
-    const playlistsData = JSON.parse(fs.readFileSync(playlistsPath, 'utf8'));
-    const mapsList = playlistsData.playlistCluster[0].maps;
-
+    const files = fs.readdirSync(mapsDir);
     const songs = [];
 
-    for (const item of mapsList) {
-      const id = item.name;
-      const songDir = path.join(__dirname, 'MAPS-HIGHHD', id);
+    for (const file of files) {
+      const songDir = path.join(mapsDir, file);
+      
+      // Validar si es un directorio y contiene songdesc.json
+      try {
+        const stat = fs.statSync(songDir);
+        if (!stat.isDirectory()) continue;
+      } catch (e) {
+        continue;
+      }
+
+      const id = file;
       const descPath = path.join(songDir, 'songdesc.json');
 
-      if (fs.existsSync(songDir) && fs.existsSync(descPath)) {
+      if (fs.existsSync(descPath)) {
         try {
           const desc = JSON.parse(fs.readFileSync(descPath, 'utf8'));
           
@@ -40,10 +51,10 @@ app.get('/api/songs', (req, res) => {
           let previewFile = '';
 
           if (fs.existsSync(mediaDir)) {
-            const files = fs.readdirSync(mediaDir);
-            videoFile = files.find(f => f.endsWith('.webm') && f !== 'preview.webm') || '';
-            previewFile = files.find(f => f === 'preview.webm') || videoFile;
-            audioFile = files.find(f => f.endsWith('.ogg')) || '';
+            const filesInMedia = fs.readdirSync(mediaDir);
+            videoFile = filesInMedia.find(f => f.endsWith('.webm') && f !== 'preview.webm') || '';
+            previewFile = filesInMedia.find(f => f === 'preview.webm') || videoFile;
+            audioFile = filesInMedia.find(f => f.endsWith('.ogg')) || '';
           }
 
           const coaches = [];
@@ -89,6 +100,9 @@ app.get('/api/songs', (req, res) => {
       }
     }
 
+    // Ordenar alfabéticamente por título de la canción
+    songs.sort((a, b) => a.title.localeCompare(b.title));
+
     res.json(songs);
   } catch (error) {
     console.error('Error al obtener canciones:', error);
@@ -106,6 +120,121 @@ app.get('/api/songs/:id/timeline', (req, res) => {
   } else {
     res.status(404).json({ error: 'timeline.json no encontrado para esta canción' });
   }
+});
+
+// ==========================================
+// API DE PERFILES (DANCE CARDS) - SQLITE
+// ==========================================
+
+// Obtener todos los perfiles
+app.get('/api/profiles', (req, res) => {
+  db.all('SELECT * FROM profiles ORDER BY name ASC', (err, rows) => {
+    if (err) {
+      console.error('Error al obtener perfiles:', err);
+      return res.status(500).json({ error: 'Error al obtener perfiles' });
+    }
+    res.json(rows);
+  });
+});
+
+// Crear un nuevo perfil
+app.post('/api/profiles', (req, res) => {
+  const { name, avatar } = req.body;
+  if (!name || !avatar) {
+    return res.status(400).json({ error: 'Nombre y avatar requeridos' });
+  }
+  db.run(
+    'INSERT INTO profiles (name, avatar, is_active) VALUES (?, ?, 0)',
+    [name, avatar],
+    function(err) {
+      if (err) {
+        console.error('Error al crear perfil:', err);
+        return res.status(500).json({ error: 'Error al crear perfil' });
+      }
+      res.json({ id: this.lastID, name, avatar, is_active: 0 });
+    }
+  );
+});
+
+// Modificar un perfil
+app.put('/api/profiles/:id', (req, res) => {
+  const { name, avatar } = req.body;
+  const { id } = req.params;
+  if (!name || !avatar) {
+    return res.status(400).json({ error: 'Nombre y avatar requeridos' });
+  }
+  db.run(
+    'UPDATE profiles SET name = ?, avatar = ? WHERE id = ?',
+    [name, avatar, id],
+    function(err) {
+      if (err) {
+        console.error('Error al actualizar perfil:', err);
+        return res.status(500).json({ error: 'Error al actualizar perfil' });
+      }
+      res.json({ id: parseInt(id), name, avatar });
+    }
+  );
+});
+
+// Activar un perfil específico (desactivando los otros)
+app.put('/api/profiles/:id/activate', (req, res) => {
+  const { id } = req.params;
+  db.serialize(() => {
+    db.run('UPDATE profiles SET is_active = 0', (err) => {
+      if (err) {
+        console.error('Error al desactivar perfiles:', err);
+        return res.status(500).json({ error: 'Error al activar perfil' });
+      }
+      db.run('UPDATE profiles SET is_active = 1 WHERE id = ?', [id], (updateErr) => {
+        if (updateErr) {
+          console.error('Error al activar perfil:', updateErr);
+          return res.status(500).json({ error: 'Error al activar perfil' });
+        }
+        db.all('SELECT * FROM profiles ORDER BY name ASC', (fetchErr, rows) => {
+          if (fetchErr) {
+            return res.status(500).json({ error: 'Error al obtener perfiles' });
+          }
+          res.json(rows);
+        });
+      });
+    });
+  });
+});
+
+// Eliminar un perfil
+app.delete('/api/profiles/:id', (req, res) => {
+  const { id } = req.params;
+  // No permitir eliminar el único perfil activo si es el último
+  db.get('SELECT COUNT(*) as count FROM profiles', (countErr, countRow) => {
+    if (countErr) {
+      return res.status(500).json({ error: 'Error al eliminar' });
+    }
+    if (countRow.count <= 1) {
+      return res.status(400).json({ error: 'No puedes eliminar el único perfil existente' });
+    }
+    db.get('SELECT is_active FROM profiles WHERE id = ?', [id], (activeErr, activeRow) => {
+      if (activeErr) return res.status(500).json({ error: 'Error al eliminar' });
+      
+      db.run('DELETE FROM profiles WHERE id = ?', [id], function(deleteErr) {
+        if (deleteErr) {
+          console.error('Error al eliminar perfil:', deleteErr);
+          return res.status(500).json({ error: 'Error al eliminar perfil' });
+        }
+        // Si el perfil eliminado era el activo, activar otro perfil disponible
+        if (activeRow && activeRow.is_active === 1) {
+          db.run('UPDATE profiles SET is_active = 1 WHERE id = (SELECT id FROM profiles LIMIT 1)', (updateErr) => {
+            db.all('SELECT * FROM profiles ORDER BY name ASC', (fetchErr, rows) => {
+              res.json(rows);
+            });
+          });
+        } else {
+          db.all('SELECT * FROM profiles ORDER BY name ASC', (fetchErr, rows) => {
+            res.json(rows);
+          });
+        }
+      });
+    });
+  });
 });
 
 // Capturar todo el resto de peticiones para servir index.html

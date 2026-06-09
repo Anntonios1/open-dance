@@ -182,50 +182,6 @@
     videoStartTime = currentSong.videoStartTime || 0;
     useSeparateAudio = !!(currentSong.audioUrl && currentSong.videoUrl);
 
-    const video = $('#game-video');
-    const audio = $('#game-audio');
-
-    if (useSeparateAudio) {
-      video.muted = true;
-      video.src = currentSong.videoUrl;
-      video.load();
-      audio.src = currentSong.audioUrl;
-      audio.load();
-
-      const videoReady = new Promise((resolve) => {
-        video.addEventListener('canplay', resolve, { once: true });
-      });
-      const audioReady = new Promise((resolve) => {
-        audio.addEventListener('canplay', resolve, { once: true });
-      });
-
-      Promise.all([videoReady, audioReady]).then(() => {
-        runCountdown(() => {
-          video.currentTime = videoStartTime;
-          video.play().catch(() => {});
-          audio.play().catch(() => {});
-          gameState.started = true;
-          gameLoop();
-        });
-      });
-    } else {
-      video.muted = false;
-      video.src = currentSong.videoUrl || currentSong.audioUrl;
-      video.load();
-
-      video.addEventListener('canplay', function onCanPlay() {
-        video.removeEventListener('canplay', onCanPlay);
-        runCountdown(() => {
-          if (videoStartTime > 0) {
-            video.currentTime = videoStartTime;
-          }
-          video.play().catch(() => {});
-          gameState.started = true;
-          gameLoop();
-        });
-      });
-    }
-
     const hud = $('.game-hud');
     hud.className = 'game-hud';
     if (selectedMode === 'spectator') hud.classList.add('spectator-mode');
@@ -265,6 +221,66 @@
     $('#picto-track').innerHTML = '';
     pictoElements = {};
     setupLyrics();
+
+    const video = $('#game-video');
+    const audio = $('#game-audio');
+
+    if (useSeparateAudio) {
+      video.muted = true;
+      video.src = currentSong.videoUrl;
+      video.load();
+      audio.src = currentSong.audioUrl;
+      audio.load();
+
+      const videoReady = new Promise((resolve) => {
+        video.addEventListener('canplay', resolve, { once: true });
+      });
+      const audioReady = new Promise((resolve) => {
+        audio.addEventListener('canplay', resolve, { once: true });
+      });
+
+      Promise.all([videoReady, audioReady]).then(() => {
+        video.pause();
+        audio.pause();
+        video.currentTime = videoStartTime;
+        audio.currentTime = 0;
+        runCountdown(() => {
+          const startBoth = () => {
+            video.play().catch(() => {});
+            audio.play().catch(() => {});
+            gameState.started = true;
+            gameLoop();
+          };
+          if (videoStartTime === 0) {
+            startBoth();
+          } else {
+            video.addEventListener('seeked', startBoth, { once: true });
+          }
+        });
+      });
+    } else {
+      video.muted = false;
+      video.src = currentSong.videoUrl || currentSong.audioUrl;
+      video.load();
+
+      video.addEventListener('canplay', function onCanPlay() {
+        video.removeEventListener('canplay', onCanPlay);
+        video.pause();
+        video.currentTime = videoStartTime;
+        runCountdown(() => {
+          const startVideo = () => {
+            video.play().catch(() => {});
+            gameState.started = true;
+            gameLoop();
+          };
+          if (videoStartTime === 0) {
+            startVideo();
+          } else {
+            video.addEventListener('seeked', startVideo, { once: true });
+          }
+        });
+      });
+    }
   }
 
   function runCountdown(callback) {

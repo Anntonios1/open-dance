@@ -49,6 +49,19 @@ export default class SongLoader {
       
       song.setTimeline(timelineData);
       console.log(`[SongLoader] Timeline loaded: ${song.lyrics.length} lyrics, ${song.moves.length} moves, ${song.pictos.length} pictos`);
+
+      // Cargar musictrack para tener los beats disponibles (usado por el debug overlay)
+      try {
+        const mtRes = await fetch(`/songs/${song.id}/musictrack.json`);
+        if (mtRes.ok) {
+          const mt = await mtRes.json();
+          song._musictrack = mt;
+          console.log(`[SongLoader] Musictrack loaded: ${mt.beats?.length || 0} beats`);
+        }
+      } catch (e) {
+        console.warn(`[SongLoader] musictrack.json no disponible para ${song.id}`);
+      }
+
       return song;
     } catch (err) {
       console.error(`[SongLoader] Failed to load timeline for "${song.id}":`, err.message);

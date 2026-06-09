@@ -11,12 +11,14 @@
 </head>
 <body>
   <div id="app">
+    <!-- NEBULA CANVAS BACKGROUND -->
+    <canvas id="nebula-canvas"></canvas>
     <!-- TITLE SCREEN -->
     <div id="screen-title" class="screen active">
       <div class="title-content">
         <div class="jd-logo-title">
           <div class="jd-text-main">JUST<br>DANCE</div>
-          <div class="jd-text-year">2022</div>
+          <div class="jd-text-year">2026</div>
         </div>
         <div class="title-health-warning">
           <p><strong>AVISO PARA LA SALUD</strong></p>
@@ -47,7 +49,7 @@
       <div class="menu-logo-center">
         <div class="jd-logo-title" style="transform:scale(1.3);">
           <div class="jd-text-main">JUST<br>DANCE</div>
-          <div class="jd-text-year">2022</div>
+          <div class="jd-text-year">2026</div>
         </div>
         <div class="menu-subtitle">A UBISOFT ORIGINAL</div>
       </div>
@@ -74,55 +76,334 @@
 
     <!-- SONG SELECTION -->
     <div id="screen-selection" class="screen">
+      <!-- Sidebar Left: Navigation Control -->
       <aside class="sidebar">
-        <div class="sidebar-item active" data-tab="home"><span class="sidebar-icon">&#8962;</span></div>
-        <div class="sidebar-item" data-tab="playlists"><span class="sidebar-icon">&#128366;</span></div>
-        <div class="sidebar-item" data-tab="songs"><span class="sidebar-icon">&#127925;</span></div>
-        <div class="sidebar-item" data-tab="search"><span class="sidebar-icon">&#128269;</span></div>
-        <div class="sidebar-item sidebar-avatar" data-tab="profile">
-          <div class="avatar-placeholder">JD</div>
+        <div class="sidebar-control-left">
+          <div class="sidebar-item active" data-tab="home" title="Inicio"><span class="sidebar-icon">&#8962;</span></div>
+          <div class="sidebar-item" data-tab="songs" title="Canciones"><span class="sidebar-icon">&#127925;</span></div>
+          <div class="sidebar-item" data-tab="party" title="Laboratorio Dr. Gigavolt"><span class="sidebar-icon">&#128302;</span></div>
+          <div class="sidebar-item" data-tab="plus" title="Just Dance Plus"><span class="sidebar-icon">&#9733;</span></div>
         </div>
       </aside>
+
       <main class="main-content">
+        <!-- Unified Header -->
         <header class="selection-header">
-          <h1 class="selection-title">JUST DANCE <span class="selection-year">2022</span></h1>
-          <div class="selection-sort">Ordenadas por: <span class="sort-active">Relevancia</span></div>
+          <h1 class="selection-title">JUST DANCE <span class="selection-year">2026</span></h1>
+          <!-- Search box in header -->
+          <div class="search-bar-container">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" id="songs-search" class="search-input" placeholder="Buscar canciones...">
+          </div>
+          <div class="selection-sort">Ordenadas por: <span class="sort-active">Título</span></div>
+          <button id="joycon-connect-btn" class="joycon-connect-btn">🎮 Conectar Joy-Con</button>
         </header>
-        <div class="songs-scroll-container">
-          <div id="songs-grid" class="songs-row"></div>
-        </div>
-        <div id="preview-panel" class="preview-panel">
-          <div class="preview-card">
-            <div class="preview-left">
-              <img id="preview-cover" class="preview-cover" src="" alt="">
+
+        <!-- PANEL: HOME (UNIFIED HUB) -->
+        <div id="home-panel" class="tab-panel active">
+          <div class="home-panel-content">
+            <div class="home-banner">
+              <h2>EDICIÓN 2026</h2>
+              <p>Descubre el Laboratorio del Dr. Gigavolt o explora las canciones exclusivas en Just Dance+.</p>
+              <button class="home-banner-btn" id="home-play-now-btn">IR AL CATÁLOGO</button>
             </div>
-            <div class="preview-center">
-              <div class="preview-video-wrap">
-                <video id="preview-video" muted loop playsinline></video>
+            <div class="home-row">
+              <div class="home-card">
+                <h3>TU PERFIL</h3>
+                <div class="profile-stats-grid">
+                  <div class="stat-box">
+                    <div id="home-stat-name" class="stat-box-val">Player 1</div>
+                    <div class="stat-box-label">Usuario Activo</div>
+                  </div>
+                  <div class="stat-box">
+                    <div id="home-stat-score" class="stat-box-val">0</div>
+                    <div class="stat-box-label">Último Puntaje</div>
+                  </div>
+                </div>
               </div>
-              <div class="preview-info-bar">
-                <span id="preview-version">Just Dance 2022</span>
-                <span id="preview-difficulty" class="preview-difficulty"></span>
+              <div class="home-card">
+                <h3>CANCIONES DESTACADAS</h3>
+                <div class="featured-song-link" id="featured-song-card">
+                  <img class="featured-song-cover" id="featured-song-cover" src="" alt="Featured">
+                  <div class="featured-song-info">
+                    <div class="featured-song-title" id="featured-song-title">Cargando...</div>
+                    <div class="featured-song-artist" id="featured-song-artist">Artista</div>
+                  </div>
+                  <span class="plus-jd-tag">PLAY</span>
+                </div>
               </div>
-            </div>
-            <div class="preview-right">
-              <div class="preview-song-title" id="preview-title"></div>
-              <div class="preview-song-artist" id="preview-artist"></div>
-              <div class="preview-star-icon">
-                <svg viewBox="0 0 100 100" class="preview-dancer-icon">
-                  <path d="M50 10 L55 30 L75 30 L60 42 L65 60 L50 48 L35 60 L40 42 L25 30 L45 30 Z" fill="#e91e8c"/>
-                  <circle cx="50" cy="18" r="8" fill="#e91e8c"/>
-                </svg>
-              </div>
-              <p class="preview-msg">Juega esta canción para intentar ser el mejor bailarín de la semana!</p>
             </div>
           </div>
-          <button id="play-song-btn" class="play-song-btn">
-            <span class="btn-hint-circle">A</span>
-            <span>A BAILAR!</span>
-          </button>
+        </div>
+
+        <!-- PANEL: SONGS (CATALOGO VERTICAL) -->
+        <div id="songs-panel" class="tab-panel">
+          <div class="songs-scroll-container">
+            <div id="songs-grid" class="songs-column"></div>
+          </div>
+        </div>
+
+        <!-- PANEL: PARTY MODE (DR GIGAVOLT'S LAB) -->
+        <div id="party-panel" class="tab-panel">
+          <div class="party-panel-content">
+            <div class="party-lab-card">
+              <div class="party-lab-info">
+                <h2>LABORATORIO DE GIGAVOLT</h2>
+                <p>El Dr. Gigavolt está llevando a cabo una serie de experimentos. Activa uno o más de sus disruptores antes de bailar una canción para alterar tu gameplay.</p>
+                <p><strong>Nota:</strong> Los experimentos se aplicarán en tiempo real una vez empiece el baile.</p>
+              </div>
+              <div class="party-disruptors-list">
+                <div class="disruptor-toggle-item" id="toggle-disruptor-invert">
+                  <div class="disruptor-details">
+                    <span class="disruptor-title">Pantalla Espejo</span>
+                    <span class="disruptor-desc">Invierte horizontalmente el video del bailarín.</span>
+                  </div>
+                  <label class="neon-switch">
+                    <input type="checkbox" id="checkbox-invert">
+                    <span class="neon-slider"></span>
+                  </label>
+                </div>
+                <div class="disruptor-toggle-item" id="toggle-disruptor-blur">
+                  <div class="disruptor-details">
+                    <span class="disruptor-title">Niebla del Lab (Desenfoque)</span>
+                    <span class="disruptor-desc">Difumina el video del bailarín dificultando los movimientos.</span>
+                  </div>
+                  <label class="neon-switch">
+                    <input type="checkbox" id="checkbox-blur">
+                    <span class="neon-slider"></span>
+                  </label>
+                </div>
+                <div class="disruptor-toggle-item" id="toggle-disruptor-speed">
+                  <div class="disruptor-details">
+                    <span class="disruptor-title">Fiebre Acelerada (+15% Vel)</span>
+                    <span class="disruptor-desc">Acelera tanto la música como el video de baile un 15%.</span>
+                  </div>
+                  <label class="neon-switch">
+                    <input type="checkbox" id="checkbox-speed">
+                    <span class="neon-slider"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL: JUST DANCE PLUS -->
+        <div id="plus-panel" class="tab-panel">
+          <div class="plus-panel-content">
+            <div class="plus-subscription-card">
+              <div class="plus-card-info">
+                <h2>JUST DANCE+</h2>
+                <p>Accede a un catálogo de streaming exclusivo con cientos de canciones adicionales de entregas anteriores. Tu cuenta incluye simulación de pase premium ilimitada.</p>
+                <button class="plus-subscribe-btn">SUSCRIBIRSE</button>
+              </div>
+              <div class="plus-badge-logo">
+                <span class="plus-logo-text">JD+</span>
+              </div>
+            </div>
+            <div class="plus-songs-grid">
+              <div class="plus-song-card-locked">
+                <img class="plus-song-cover" src="/songs/mood/menuart/cover.png" alt="Mood Alt">
+                <div class="plus-song-info">
+                  <div class="plus-song-title">Mood (Alternative Version)</div>
+                  <div class="plus-song-artist">24kGoldn ft. iann dior</div>
+                  <span class="plus-jd-tag">JUST DANCE+</span>
+                </div>
+                <span class="plus-lock-badge">&#128274;</span>
+              </div>
+              <div class="plus-song-card-locked">
+                <img class="plus-song-cover" src="/songs/boysaliar/menuart/cover.png" alt="Boys a liar Alt">
+                <div class="plus-song-info">
+                  <div class="plus-song-title">Boy's a liar Pt. 1</div>
+                  <div class="plus-song-artist">PinkPantheress</div>
+                  <span class="plus-jd-tag">JUST DANCE+</span>
+                </div>
+                <span class="plus-lock-badge">&#128274;</span>
+              </div>
+              <div class="plus-song-card-locked">
+                <img class="plus-song-cover" src="/songs/despecha/menuart/cover.png" alt="Despecha Alt">
+                <div class="plus-song-info">
+                  <div class="plus-song-title">DESPECHÁ (VIP Remix)</div>
+                  <div class="plus-song-artist">Rosalía</div>
+                  <span class="plus-jd-tag">JUST DANCE+</span>
+                </div>
+                <span class="plus-lock-badge">&#128274;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DETAIL VIEW PANEL (JUST DANCE 2026 DETALLE DE CANCIÓN) -->
+        <div id="detail-view-panel" class="detail-view-panel">
+          <div class="detail-layout-container">
+            <!-- Left section: Meta and Dance Button -->
+            <div class="detail-left-column">
+              <div class="detail-song-logo-wrap">
+                <h1 id="detail-title" class="detail-song-title-large">360</h1>
+                <div id="detail-edition" class="detail-song-edition">Just Dance 2026 Edition</div>
+              </div>
+              <div id="detail-artist" class="detail-song-artist">Charli xcx</div>
+              <div class="detail-capsules-container">
+                <div class="detail-stats-capsule">
+                  <span>Dificultad: <span id="detail-difficulty" class="detail-stat-val">Hard</span></span>
+                  <div class="detail-stat-divider"></div>
+                  <span>Esfuerzo: <span id="detail-effort" class="detail-stat-val">Chill</span></span>
+                  <div class="detail-stat-divider"></div>
+                  <span>Coaches: <span id="detail-coaches" class="detail-stat-val">1</span></span>
+                </div>
+              </div>
+              <div class="detail-camera-compatibility">
+                <span>🎮 Compatible con Modo Mando</span>
+              </div>
+              <div class="dance-btn-wrapper">
+                <button id="detail-dance-btn" class="detail-dance-btn">
+                  DANCE
+                </button>
+                <button class="detail-add-controller-btn">+</button>
+                <!-- Player avatar floating on DANCE button -->
+                <div id="dance-btn-player-avatar" class="dance-btn-profile-overlay">
+                  <!-- dynamically updated -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Center section: tall video frame -->
+            <div class="detail-center-column">
+              <div class="detail-video-wrapper">
+                <video id="detail-video" loop playsinline></video>
+              </div>
+            </div>
+
+            <!-- Right section: visual spectrum charts -->
+            <div class="detail-right-column">
+              <div class="detail-dashboard-card">
+                <div class="detail-spectrum-meter">
+                  <div class="spectrum-row">
+                    <span>SPD</span>
+                    <div class="spectrum-track"><div class="spectrum-fill" style="--val: 75%;"></div><div class="slider-knob" style="--val: 75%;"></div></div>
+                  </div>
+                  <div class="spectrum-row">
+                    <span>FLOW</span>
+                    <div class="spectrum-track"><div class="spectrum-fill" style="--val: 60%;"></div><div class="slider-knob" style="--val: 60%;"></div></div>
+                  </div>
+                  <div class="spectrum-row">
+                    <span>ACC</span>
+                    <div class="spectrum-track"><div class="spectrum-fill" style="--val: 85%;"></div><div class="slider-knob" style="--val: 85%;"></div></div>
+                  </div>
+                  <div class="spectrum-row">
+                    <span>STYLE</span>
+                    <div class="spectrum-track"><div class="spectrum-fill" style="--val: 50%;"></div><div class="slider-knob" style="--val: 50%;"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Leaderboards bottom section -->
+            <div class="detail-leaderboards-section">
+              <div class="leaderboard-container">
+                <div class="leaderboard-title">WORLD LEADERBOARD</div>
+                <div id="world-leaderboard-list" class="leaderboard-list">
+                  <!-- dynamically filled -->
+                </div>
+              </div>
+              <div class="leaderboard-container">
+                <div class="leaderboard-title">FRIENDS LEADERBOARD</div>
+                <div id="friends-leaderboard-list" class="leaderboard-list">
+                  <!-- dynamically filled -->
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
+
+      <!-- Sidebar Right: Profile Control -->
+      <aside class="sidebar-right">
+        <div class="sidebar-right-panel">
+          <div class="r-button-hint-capsule">
+            <span class="r-hint-icon">R</span>
+          </div>
+          <!-- Profile avatar button -->
+          <div id="sidebar-active-profile-btn" class="profile-avatar-btn">
+            <img id="sidebar-active-profile-img" src="" alt="Dancer Card">
+            <span class="status-dot"></span>
+          </div>
+          <button id="sidebar-add-profile-btn" class="profile-add-btn" title="Crear perfil">+</button>
+          <button class="profile-group-btn" title="Grupo"><span class="red-dot"></span>👥</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- DANCE CARDS MODAL MANAGER -->
+    <div id="dance-cards-modal" class="modal-overlay">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h2 class="modal-title">DANCE CARDS</h2>
+          <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+        </div>
+        <!-- Profiles grid -->
+        <div id="modal-profiles-grid" class="profiles-list-grid">
+          <!-- dynamically populated -->
+        </div>
+        <!-- Create new Profile form -->
+        <div class="create-profile-form">
+          <h3 class="form-title">Crear nueva Dance Card</h3>
+          <div class="form-row">
+            <!-- Avatars to select -->
+            <div class="form-group">
+              <label>Seleccionar Avatar</label>
+              <div id="avatar-selector-grid" class="avatar-selector-grid">
+                <!-- filled with dynamic options -->
+              </div>
+            </div>
+            <!-- Name & Action -->
+            <div class="form-inputs">
+              <div class="form-group">
+                <label for="create-profile-name">Nombre de Jugador</label>
+                <input type="text" id="create-profile-name" class="form-control-input" placeholder="Ingresa un nombre..." maxlength="12">
+              </div>
+              <button id="create-profile-submit" class="form-submit-btn">GUARDAR PERFIL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- TRANSITION LOADING SCREEN -->
+    <div id="screen-loading" class="screen">
+      <div class="loading-bg">
+        <div class="loading-diamonds">
+          <div class="ld-diamond" style="--x:20%; --y:30%; --s:0.8; --c:var(--jd-cyan); --d: 0s;"></div>
+          <div class="ld-diamond" style="--x:80%; --y:20%; --s:1.1; --c:var(--jd-magenta); --d: 1s;"></div>
+          <div class="ld-diamond" style="--x:50%; --y:70%; --s:0.9; --c:var(--jd-purple); --d: 2s;"></div>
+        </div>
+      </div>
+      <div class="loading-content">
+        <div class="loading-banner-header">
+          <span class="loading-sparkle">✦</span>
+          <span class="loading-text">CARGANDO CANCIÓN</span>
+          <span class="loading-sparkle">✦</span>
+        </div>
+        <div class="loading-song-container">
+          <div class="loading-cover-wrapper">
+            <img id="loading-song-cover" src="" alt="Cargando...">
+            <div class="loading-cover-glow"></div>
+          </div>
+          <div class="loading-song-details">
+            <h1 id="loading-song-title">Song Title</h1>
+            <p id="loading-song-artist">Song Artist</p>
+            <div class="loading-badge-edition">JUST DANCE 2026 EDITION</div>
+          </div>
+        </div>
+        <div class="loading-status">
+          <div class="loading-progress-container">
+            <div class="loading-progress-bar"></div>
+          </div>
+          <div class="loading-meta-status">
+            <span>Preparando escenario...</span>
+            <div class="loading-mini-spinner"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- COACH / MODE SELECTION -->
@@ -148,8 +429,10 @@
               <div></div><div></div><div></div><div></div>
             </div>
           </div>
-          <div class="coach-player-avatar">JD</div>
-          <div class="coach-player-name">Player 1</div>
+          <div class="coach-player-avatar">
+            <img id="coach-active-avatar-img" src="" alt="" style="width:100%; height:100%; border-radius:8px; object-fit:cover;">
+          </div>
+          <div class="coach-player-name" id="coach-active-name-txt">Player 1</div>
         </div>
         <div class="coach-footer-hints">
           <span><span class="btn-hint">B</span> Atrás</span>
@@ -159,22 +442,43 @@
       </div>
     </div>
 
+    <!-- SONG INTRO NEBULA OVERLAY -->
+    <div id="screen-intro-nebula" class="screen">
+      <div class="intro-nebula-content">
+        <div class="intro-glowing-ring"></div>
+        <div class="intro-neon-line"></div>
+        <div class="intro-song-title" id="intro-song-title"></div>
+        <div class="intro-song-artist" id="intro-song-artist"></div>
+      </div>
+    </div>
+
     <!-- GAMEPLAY -->
     <div id="screen-gameplay" class="screen">
-      <video id="game-video" class="game-video" playsinline muted></video>
+      <video id="game-video" class="game-video" playsinline muted preload="auto"></video>
       <audio id="game-audio" preload="auto"></audio>
       <div class="game-hud">
-        <!-- Top Left: Player -->
+        <!-- Top Left: Player (Dancer Card layout) -->
         <div class="hud-player">
-          <div class="player-ctrl">
-            <div class="ctrl-dot green"></div>
-            <div class="ctrl-dots">
-              <div></div><div></div><div></div><div></div>
+          <div class="hud-player-card">
+            <div class="hud-player-device-bar">
+              <div id="joycon-status-indicator" class="joycon-status-indicator" style="display: none;">
+                <span class="joycon-status-dot"></span>
+                <span class="joycon-side-label">Joy-Con</span>
+              </div>
+              <span title="Controller">🎮</span>
+              <span title="Network" class="hud-net-signal">📶</span>
             </div>
+            <img id="hud-player-avatar-img" src="" alt="Active Profile">
+            <div class="hud-player-name-overlay" id="hud-player-name-txt">Player 1</div>
           </div>
-          <div class="player-name-box">
-            <div class="player-name">Player 1</div>
-            <div class="player-bar"></div>
+        </div>
+
+        <!-- Top Right: Workout Widget (Calorias) -->
+        <div id="hud-workout-widget" class="hud-workout-widget" style="display: none;">
+          <span class="hud-workout-icon">🔥</span>
+          <div>
+            <div id="hud-workout-kcal-txt" class="hud-workout-kcal-val">0</div>
+            <div class="hud-workout-kcal-label">kcal quemadas</div>
           </div>
         </div>
 
@@ -224,6 +528,16 @@
         <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
         <div class="results-card">
           <h1 class="results-title">RESULTADOS</h1>
+          <!-- Active Player Card info on results -->
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+            <img id="results-avatar-img" src="" alt="" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--jd-magenta);">
+            <div id="results-name-txt" style="font-weight: 800; font-size: 1.2rem;">Player 1</div>
+          </div>
+          <!-- Workout kcal stat if active -->
+          <div id="results-workout-box" style="display: none; background: rgba(219,39,119,0.1); border: 1px solid var(--jd-magenta); border-radius: 12px; padding: 0.5rem; width: 200px; margin: 0 auto 1.5rem;">
+            <div style="font-size: 0.8rem; color: var(--text-dim);">Entrenamiento completado</div>
+            <div style="font-size: 1.3rem; font-weight: 900; color: var(--jd-magenta);"><span id="results-workout-kcal-txt">0</span> kcal</div>
+          </div>
           <div class="results-score-section">
             <div id="results-stars" class="results-stars"></div>
             <div id="results-score" class="results-score">0</div>

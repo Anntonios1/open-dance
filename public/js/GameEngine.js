@@ -8,6 +8,9 @@ import {
   RANK_THRESHOLDS,
   RATING_LABELS,
 } from './config.js';
+import DebugOverlay, { DEBUG } from './DebugOverlay.js';
+import MSMLoader from './MSMLoader.js';
+import MotionMatcher from './MotionMatcher.js';
 
 export default class GameEngine {
   constructor(options) {
@@ -23,6 +26,7 @@ export default class GameEngine {
     this.countdownOverlay = options.countdownOverlay;
     this.countdownNumber = options.countdownNumber;
     this.hudElement = options.hudElement;
+    this.hudPlayerCard = options.hudPlayerCard || null;
     this.onEnd = options.onEnd || (() => {});
 
     this.song = null;
@@ -36,6 +40,37 @@ export default class GameEngine {
     this.maxErrors = 5;
     this.videoStartTime = 0;
     this.useSeparateAudio = false;
+    this._starting = false;
+    this.beats = [];
+
+    // --- Joy-Con motion matching ---
+    /** @type {import('./JoyConController.js').default|null} */
+    this.joycon = null;
+    this.motionMatcher = new MotionMatcher();
+    /** Preloaded MSM data keyed by move name */
+    this._msmCache = {};
+    /** Samples being collected for the active move */
+    this._motionBuffer = [];
+    /** Index of the move currently being tracked (in state.moves) */
+    this._activeMove = null;
+    /** Sliding history buffer of Joy-Con samples */
+    this._joyconHistory = [];
+    this._lastSongTime = 0;
+    this._lastSongTimeRealTime = 0;
+
+    // --- Debug overlay ---
+    this.debugOverlay = null;
+    if (DEBUG) {
+      this.debugOverlay = new DebugOverlay({
+        video: this.video,
+        audio: this.audio,
+        beats: this.beats,
+        timeline: { pictos: [], moves: [], lyrics: [] },
+        getGameState: () => this.state,
+        getSongTime: () => this._getSongTime(),
+      });
+      this.debugOverlay.mount();
+    }
 
     this._bindVideoEvents();
   }
@@ -100,20 +135,17 @@ export default class GameEngine {
     this.video.addEventListener('stalled', () => {
       this._log('warn', 'Video stalled, waiting for data');
     });
-
-    this.video.addEventListener('waiting', () => {
-      this._log('warn', 'Video buffering');
-    });
   }
 
   _getSongTime() {
+    const offset = (DEBUG && this.debugOverlay) ? this.debugOverlay.getAudioOffsetSec() : 0;
     if (this.useSeparateAudio && this.audio) {
-      return this.audio.currentTime;
+      return this.audio.currentTime + offset;
     }
-    return this.video.currentTime - this.videoStartTime;
+    return this.video.currentTime - this.videoStartTime + offset;
   }
 
-  start(song, coachID = 0, mode = 'keyboard') {
+  start(song, coachID = 0, mode = 'keyboard', modifiers = null, activeProfile = null) {
     try {
       this._log('info', `Starting game: ${song?.title || 'unknown'} (coach ${coachID}, mode ${mode})`);
 
@@ -129,6 +161,40 @@ export default class GameEngine {
       this.coachID = coachID;
       this.mode = mode;
       this.errorCount = 0;
+
+      // Inicializar Modos de Juego
+      this._workoutActive = false;
+      this._workoutKcal = 0;
+      this._lastRafTime = null;
+
+      // Resetear clases de disruptores de video anteriores
+      this.video.classList.remove('disruptor-invert', 'disruptor-blur');
+
+      if (modifiers) {
+        // Workout Mode
+        if (modifiers.workoutMode && modifiers.workoutMode.active) {
+          this._workoutActive = true;
+          this._workoutKcal = 0;
+          const widget = document.querySelector('#hud-workout-widget');
+          if (widget) {
+            widget.style.display = 'flex';
+            document.querySelector('#hud-workout-kcal-txt').textContent = '0.0';
+          }
+        } else {
+          const widget = document.querySelector('#hud-workout-widget');
+          if (widget) widget.style.display = 'none';
+        }
+
+        // Party Mode disruptores visuales
+        if (modifiers.partyMode) {
+          if (modifiers.partyMode.invert) {
+            this.video.classList.add('disruptor-invert');
+          }
+          if (modifiers.partyMode.blur) {
+            this.video.classList.add('disruptor-blur');
+          }
+        }
+      }
 
       this.hudElement.className = 'game-hud';
       if (mode === 'spectator') this.hudElement.classList.add('spectator-mode');
@@ -159,11 +225,45 @@ export default class GameEngine {
         ended: false,
       };
 
+      // Configure Joy-Con callbacks to capture samples continuously in sliding history
+      if (this.mode === 'joycon' && this.joycon) {
+        this._joyconHistory = [];
+        this._activeMove = null;
+        this._lastSongTime = 0;
+        this._lastSongTimeRealTime = performance.now();
+        this.joycon.onSample = (sample) => {
+          const now = performance.now();
+          const elapsed = (now - this._lastSongTimeRealTime) / 1000;
+          const sampleTime = this._lastSongTime + elapsed * (this.video?.playbackRate || 1.0);
+          
+          this._joyconHistory.push({ ...sample, time: sampleTime });
+          
+          // Keep only the last 5 seconds of samples to save memory
+          const minTime = sampleTime - 5.0;
+          while (this._joyconHistory.length > 0 && this._joyconHistory[0].time < minTime) {
+            this._joyconHistory.shift();
+          }
+        };
+      }
+
       this._log('info', `Game state initialized: ${this.state.pictos.length} pictos, ${this.state.goldMovesTotal} gold moves`);
 
       this.videoStartTime = song.videoStartTime || 0;
       this.useSeparateAudio = song.hasSeparateAudio() && !!song.videoUrl;
       this._log('info', `videoStartTime: ${this.videoStartTime}s, separateAudio: ${this.useSeparateAudio}`);
+
+      // Pasar beats y timeline al overlay de debug
+      if (DEBUG && this.debugOverlay) {
+        this.debugOverlay.timeline = {
+          pictos: song.pictos || [],
+          moves:  song.moves  || [],
+          lyrics: song.lyrics || [],
+        };
+        if (song._musictrack) {
+          this.beats = song._musictrack.beats || [];
+          this.debugOverlay.beats = this.beats;
+        }
+      }
 
       this._resetStarsUI();
       this.pictoTrack.innerHTML = '';
@@ -195,18 +295,55 @@ export default class GameEngine {
         });
 
         Promise.all([videoReady, audioReady]).then(() => {
-          this._log('info', 'Video and audio ready, starting countdown');
-          this._runCountdown(() => {
-            this.video.currentTime = this.videoStartTime;
-            this.video.play().catch((err) => {
-              this._log('error', `Video play() failed: ${err.message}`);
+          this.video.pause();
+          this.audio.currentTime = 0;
+          this._log('info', `Media ready. Video paused. videoStartTime=${this.videoStartTime}s`);
+
+          const doSeek = () => {
+            return new Promise((resolve) => {
+              if (this.videoStartTime === 0) {
+                resolve();
+              } else {
+                this.video.addEventListener('seeked', resolve, { once: true });
+                this.video.currentTime = this.videoStartTime;
+              }
             });
-            this.audio.play().catch((err) => {
-              this._log('error', `Audio play() failed: ${err.message}`);
+          };
+
+          doSeek().then(() => {
+            this._log('info', `Video at ${this.video.currentTime}s. Starting countdown`);
+            this._runCountdown(() => {
+              this._starting = true;
+
+              // Resetear audio a 0.
+              this.audio.currentTime = 0;
+
+              // Lanzamos ambos play() de forma consecutiva inmediata
+              const p1 = this.video.play();
+              const p2 = this.audio.play();
+
+              Promise.all([p1, p2]).then(() => {
+                // Acelerar si el disruptor de velocidad está activo
+                if (modifiers && modifiers.partyMode && modifiers.partyMode.speed) {
+                  this.video.playbackRate = 1.15;
+                  this.audio.playbackRate = 1.15;
+                } else {
+                  this.video.playbackRate = 1.0;
+                  this.audio.playbackRate = 1.0;
+                }
+
+                this._log('info', `Both media playing — audio.ct=${this.audio.currentTime.toFixed(3)}s video.ct=${this.video.currentTime.toFixed(3)}s`);
+                if (DEBUG && this.debugOverlay) this.debugOverlay.notifyStart();
+                setTimeout(() => { this._starting = false; }, 500);
+
+                this.state.started = true;
+                this._log('info', 'Game loop started');
+                this._gameLoop();
+              }).catch((err) => {
+                this._log('error', `Play failed: ${err.message}`);
+                this._starting = false;
+              });
             });
-            this.state.started = true;
-            this._log('info', 'Game loop started');
-            this._gameLoop();
           });
         });
       } else {
@@ -217,17 +354,35 @@ export default class GameEngine {
         this.video.addEventListener(
           'canplay',
           () => {
-            this._log('info', 'Video ready, starting countdown');
-            this._runCountdown(() => {
-              if (this.videoStartTime > 0) {
-                this.video.currentTime = this.videoStartTime;
-              }
-              this.video.play().catch((err) => {
-                this._log('error', `Video play() failed: ${err.message}`);
+            this.video.pause();
+            this._log('info', `Video ready. Paused. videoStartTime=${this.videoStartTime}s`);
+
+            const doSeek = () => {
+              return new Promise((resolve) => {
+                if (this.videoStartTime === 0) {
+                  resolve();
+                } else {
+                  this.video.addEventListener('seeked', resolve, { once: true });
+                  this.video.currentTime = this.videoStartTime;
+                }
               });
-              this.state.started = true;
-              this._log('info', 'Game loop started');
-              this._gameLoop();
+            };
+
+            doSeek().then(() => {
+              this._runCountdown(() => {
+                this.video.play().then(() => {
+                  if (modifiers && modifiers.partyMode && modifiers.partyMode.speed) {
+                    this.video.playbackRate = 1.15;
+                  } else {
+                    this.video.playbackRate = 1.0;
+                  }
+                }).catch((err) => {
+                  this._log('error', `Video play() failed: ${err.message}`);
+                });
+                this.state.started = true;
+                this._log('info', 'Game loop started');
+                this._gameLoop();
+              });
             });
           },
           { once: true }
@@ -291,6 +446,7 @@ export default class GameEngine {
       goldMovesHit: this.state.goldMovesHit,
       goldMovesTotal: this.state.goldMovesTotal,
       rankTitle,
+      workoutKcal: this._workoutActive ? this._workoutKcal : 0
     };
   }
 
@@ -302,15 +458,56 @@ export default class GameEngine {
     this._log('info', 'Game stopped');
     this.state.ended = true;
     if (this.animFrameId) cancelAnimationFrame(this.animFrameId);
+    
+    // Restablecer vídeo y audio a velocidades y filtros por defecto
+    this.video.classList.remove('disruptor-invert', 'disruptor-blur');
+    this.video.playbackRate = 1.0;
+    if (this.audio) {
+      this.audio.playbackRate = 1.0;
+      this.audio.pause();
+    }
     this.video.pause();
-    if (this.audio) this.audio.pause();
+
+    // Clean up Joy-Con callbacks
+    if (this.joycon) {
+      this.joycon.onSample = null;
+    }
+
+    // Ocultar HUD de ejercicio
+    const widget = document.querySelector('#hud-workout-widget');
+    if (widget) widget.style.display = 'none';
   }
 
-  _gameLoop() {
+  _gameLoop(rafTime) {
     if (!this.state.started || this.state.ended) return;
 
     try {
       const currentTime = this._getSongTime();
+      this._lastSongTime = currentTime;
+      this._lastSongTimeRealTime = performance.now();
+
+      // Calcular calorías quemadas si Workout Mode está activo
+      if (this._workoutActive && this.video && !this.video.paused) {
+        if (!this._lastRafTime) this._lastRafTime = rafTime || performance.now();
+        const dt = (rafTime - this._lastRafTime) / 1000;
+        
+        if (dt > 0 && dt < 1) { // Filtrar saltos de cuadro irregulares
+          const scoreFactor = (this.state.score / 13000) * 0.5 + 0.8;
+          this._workoutKcal = (this._workoutKcal || 0) + dt * 0.16 * scoreFactor;
+        }
+        
+        this._lastRafTime = rafTime;
+
+        // Actualizar HUD en tiempo real
+        const hudKcal = document.querySelector('#hud-workout-kcal-txt');
+        if (hudKcal) hudKcal.textContent = this._workoutKcal.toFixed(1);
+      }
+
+      // Actualizar debug overlay cada frame
+      if (DEBUG && this.debugOverlay) this.debugOverlay.update(rafTime || performance.now());
+
+      // Beat-pulse visual en la hit zone
+      if (this.beats.length > 0) this._updateBeatPulse(currentTime);
 
       this._updateLyrics(currentTime);
       this._updatePictos(currentTime);
@@ -318,6 +515,8 @@ export default class GameEngine {
 
       if (this.mode === 'autoplay') {
         this._handleAutoplay(currentTime);
+      } else if (this.mode === 'joycon') {
+        this._handleJoyCon(currentTime);
       }
 
       const mediaEnded = this.useSeparateAudio
@@ -327,14 +526,75 @@ export default class GameEngine {
       if (mediaEnded) {
         this._log('info', 'Media ended, showing results');
         this.state.ended = true;
+        
+        // Restablecer estilos al terminar
+        this.video.classList.remove('disruptor-invert', 'disruptor-blur');
+        this.video.playbackRate = 1.0;
+        if (this.audio) this.audio.playbackRate = 1.0;
+
+        // Clean up Joy-Con callbacks
+        if (this.joycon) {
+          this.joycon.onSample = null;
+        }
+
         setTimeout(() => this.onEnd(this.getResults()), 500);
         return;
       }
 
-      this.animFrameId = requestAnimationFrame(() => this._gameLoop());
+      this.animFrameId = requestAnimationFrame((t) => this._gameLoop(t));
     } catch (err) {
       this._log('error', `Game loop error: ${err.message}`, err.stack);
-      this.animFrameId = requestAnimationFrame(() => this._gameLoop());
+      this.animFrameId = requestAnimationFrame((t) => this._gameLoop(t));
+    }
+  }
+
+  _updateBeatPulse(currentTime) {
+    // Pulso visual en la hit-line en cada beat
+    const nextBeatIdx = this.beats.findIndex(b => b > currentTime);
+    if (nextBeatIdx < 1) return;
+    const prevBeat = this.beats[nextBeatIdx - 1];
+    const timeSinceBeat = currentTime - prevBeat;
+    // Flash durante los primeros 100ms después de cada beat
+    if (timeSinceBeat >= 0 && timeSinceBeat < 0.1) {
+      const hitLine = this.pictoTrack?.parentElement?.querySelector('.picto-hit-line');
+      if (hitLine && !hitLine._pulsing) {
+        hitLine._pulsing = true;
+        hitLine.classList.add('beat-pulse');
+        setTimeout(() => {
+          hitLine.classList.remove('beat-pulse');
+          hitLine._pulsing = false;
+        }, 100);
+      }
+
+      // Baile de estrellas (beat-dance) alternando direcciones
+      if (this.starList && !this._starsPulsing) {
+        this._starsPulsing = true;
+        const starItems = this.starList.querySelectorAll('.star-item');
+        starItems.forEach((item, index) => {
+          item.classList.add('beat-dance');
+          if (index % 2 === 0) {
+            item.classList.add('dance-left');
+          } else {
+            item.classList.add('dance-right');
+          }
+        });
+        setTimeout(() => {
+          starItems.forEach((item) => {
+            item.classList.remove('beat-dance', 'dance-left', 'dance-right');
+          });
+          this._starsPulsing = false;
+        }, 120);
+      }
+
+      // Beat-bounce on the player card
+      if (this.hudPlayerCard && !this.hudPlayerCard._bouncing) {
+        this.hudPlayerCard._bouncing = true;
+        this.hudPlayerCard.classList.add('beat-bounce');
+        setTimeout(() => {
+          this.hudPlayerCard.classList.remove('beat-bounce');
+          this.hudPlayerCard._bouncing = false;
+        }, 140);
+      }
     }
   }
 
@@ -355,6 +615,7 @@ export default class GameEngine {
           if (this.mode === 'keyboard') {
             this.state.misses++;
             this._showRating('miss');
+            if (DEBUG && this.debugOverlay) this.debugOverlay.notifyMiss(picto.name, timeDiff);
           }
         }
         return;
@@ -391,6 +652,132 @@ export default class GameEngine {
     });
   }
 
+  /* ========================================
+   * Joy-Con motion mode
+   * ======================================== */
+
+  /**
+   * Set the Joy-Con controller reference.
+   * When set, the engine can be started in mode='joycon'.
+   */
+  setJoyCon(joyconController) {
+    this.joycon = joyconController;
+  }
+
+  /**
+   * Preload all unique .msm files referenced by the song's moves
+   * for the selected coach. Called once at game start.
+   */
+  async _preloadMSM() {
+    if (!this.state || !this.state.moves) return;
+    const songId = this.song.id;
+    const uniqueNames = [...new Set(this.state.moves.map(m => m.name))];
+    const promises = uniqueNames.map(async (name) => {
+      if (this._msmCache[name]) return;
+      const url = `/songs/${songId}/moves/${name}.msm`;
+      try {
+        const data = await MSMLoader.load(url);
+        this._msmCache[name] = data;
+      } catch (err) {
+        this._log('warn', `MSM load failed for ${name}: ${err.message}`);
+      }
+    });
+    await Promise.allSettled(promises);
+    this._log('info', `MSM preloaded: ${Object.keys(this._msmCache).length} / ${uniqueNames.length}`);
+  }
+
+  /**
+   * Called every frame when mode === 'joycon'.
+   * Manages the sample-collection windows per move.
+   */
+  _handleJoyCon(currentTime) {
+    if (!this.joycon || !this.joycon.connected) return;
+
+    // Find the move whose window [time, time+duration] contains currentTime
+    for (let i = 0; i < this.state.moves.length; i++) {
+      const move = this.state.moves[i];
+      const end  = move.time + move.duration;
+
+      // Already past this move
+      if (currentTime > end + 0.05) continue;
+
+      // Inside the move window
+      if (currentTime >= move.time && currentTime <= end) {
+        this._activeMove = i;
+        return;
+      }
+
+      // Just exited a move window — evaluate
+      if (this._activeMove === i && currentTime > end) {
+        this._evaluateMove(i);
+        this._activeMove = null;
+        return;
+      }
+    }
+
+    // If we have a pending active move that was never evaluated
+    if (this._activeMove !== null) {
+      this._evaluateMove(this._activeMove);
+      this._activeMove = null;
+    }
+  }
+
+  /**
+   * Evaluate collected motion samples for a move against MSM reference.
+   */
+  _evaluateMove(moveIndex) {
+    const move = this.state.moves[moveIndex];
+    if (!move) return;
+
+    // Find the corresponding picto index
+    const pictoIdx = this.state.pictos.findIndex(
+      p => !p.hit && Math.abs(p.time - move.time) < 0.5
+    );
+
+    const msm = this._msmCache[move.name];
+    
+    // Extract player samples from history with 400ms padding on both sides
+    const pad = 0.4;
+    const startTime = move.time - pad;
+    const endTime = move.time + move.duration + pad;
+    const extracted = this._joyconHistory.filter(s => s.time >= startTime && s.time <= endTime);
+
+    console.log(`[GameEngine] _evaluateMove for "${move.name}": msmLoaded = ${!!msm}, extractedLength = ${extracted.length}`);
+    if (!msm || extracted.length < 3) {
+      if (!msm) console.warn(`[GameEngine] Move "${move.name}" has no preloaded MSM reference data!`);
+      if (extracted.length < 3) console.warn(`[GameEngine] Extracted history has only ${extracted.length} samples. Check if Joy-Con is sending samples.`);
+      
+      if (pictoIdx >= 0) {
+        this.state.pictos[pictoIdx].hit = true;
+        this.state.misses++;
+        this._showRating('miss');
+      }
+      return;
+    }
+
+    const { rating, score, lag } = this.motionMatcher.evaluate(
+      extracted,
+      msm.samples,
+      msm.components,
+      move.duration,
+      pad,
+      pad
+    );
+
+    this._log('info', `Move "${move.name}" → ${rating} (NCC=${score.toFixed(3)}, lag=${(lag * 1000).toFixed(0)}ms)`);
+
+    if (pictoIdx >= 0) {
+      this._hitPicto(pictoIdx, rating);
+      if (DEBUG && this.debugOverlay) {
+        if (rating === 'miss') {
+          this.debugOverlay.notifyMiss(move.name, lag);
+        } else {
+          this.debugOverlay.notifyHit(move.name, rating, score, lag);
+        }
+      }
+    }
+  }
+
   _hitPicto(index, rating) {
     const picto = this.state.pictos[index];
     if (!picto || picto.hit) return;
@@ -402,6 +789,7 @@ export default class GameEngine {
     else if (rating === 'super') this.state.supers++;
     else if (rating === 'good') this.state.goods++;
     else if (rating === 'ok') this.state.oks++;
+    else if (rating === 'miss') this.state.misses++;
 
     if (picto.isGold) {
       this.state.goldMovesHit++;
@@ -414,13 +802,16 @@ export default class GameEngine {
     this._showRating(rating);
 
     if (this.pictoElements[index]) {
-      this.pictoElements[index].classList.add('hit');
+      const el = this.pictoElements[index];
+      el.classList.add('hit');
+      // Immediately remove from layout so it doesn't block pictos behind it
+      el.style.pointerEvents = 'none';
       setTimeout(() => {
         if (this.pictoElements[index]) {
           this.pictoElements[index].remove();
           delete this.pictoElements[index];
         }
-      }, 300);
+      }, 220);
     }
   }
 
@@ -563,6 +954,11 @@ export default class GameEngine {
   }
 
   _runCountdown(callback) {
+    // Recalibrate Joy-Con if connected and in joycon mode so offsets are captured while static
+    if (this.mode === 'joycon' && this.joycon && this.joycon.connected) {
+      this.joycon.recalibrate();
+    }
+
     this.countdownOverlay.classList.add('active');
     let count = 3;
     this.countdownNumber.textContent = count;

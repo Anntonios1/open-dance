@@ -1,0 +1,644 @@
+# ANÁLISIS VISUAL COMPLETO: JUST DANCE 2026 - "ANXIETY" POR DOECHII
+
+---
+
+## 1. INTERFAZ DE USUARIO (UI) — MENÚ PRINCIPAL
+
+### 1.1 Estructura General del Layout
+
+La pantalla se divide en tres zonas horizontales principales sobre un fondo degradado:
+
+**Fondo base:** Degradado radial que va de un púrpura oscuro (#1a0533) en los bordes a un magenta/violeta más claro (#6b2fa0) hacia el centro. Presenta un patrón de líneas diagonales semitransparentes en tonos púrpura más claros que cruzan la pantalla en ángulo de aproximadamente 30-45 grados desde la esquina inferior izquierda hacia la superior derecha. Estas líneas tienen un grosor de ~40-60px y están separadas por ~80-100px, con opacidad del 15-20%.
+
+### 1.2 Zona Superior — Preview del Video (60% de la altura)
+
+**Contenedor del video preview:**
+- Posición: centrado horizontalmente, ocupando aproximadamente el 60% superior de la pantalla
+- Bordes: redondeados con radius de ~12px
+- Aspect ratio: 16:9
+- Sombra: drop-shadow sutil de color púrpura oscuro con blur de ~20px
+
+**Contenido del preview (video en loop):**
+- Muestra a la coach "Thesea" bailando en el escenario del laberinto de setos
+- La coach realiza movimientos de baile en loop continuo
+- El fondo del preview muestra el escenario 3D con setos verdes, cielo azul, nubes blancas
+- Elementos decorativos visibles: reloj grande, botella de ketchup flotante, marco de pintura en el seto
+
+**Overlay de información (lado izquierdo del preview):**
+
+**Título "ANXIETY":**
+- Fuente: tipo display/bold, letras mayúsculas
+- Color: verde césped (#4a7c2e) con textura que simula hierba/topiary
+- Efecto 3D: las letras tienen profundidad, como si fueran arbustos recortados
+- Tamaño: aproximadamente 80-100px de altura
+- Posición: esquina superior izquierda del preview, con margen de ~40px del borde
+- Sombra: drop-shadow verde oscuro para dar profundidad
+
+**Información de la canción (debajo del título):**
+- "Just Dance 2026 Edition" — texto pequeño, blanco, ~14px, opacidad 70%
+- "Doechii" — texto blanco, ~18px, en un badge/pill con fondo azul oscuro (#1a3a6b), bordes redondeados (~6px), padding ~8px 16px
+
+**Badges de dificultad:**
+- Tres indicadores en fila horizontal:
+  1. **Difficulty: Medium** — Icono de tres barras verticales (dos llenas en blanco, una en gris), texto "Difficulty: Medium" en blanco ~14px
+  2. **Effort: Moderate** — Icono de montaña/triángulo con gradiente, texto "Effort: Moderate" en blanco ~14px
+  3. **1 Coach(es)** — Icono de figura humana, texto "1 Coach(es)" en blanco ~14px
+- Separados por ~20px entre cada uno
+
+**Nota de compatibilidad:**
+- Icono de cámara (círculo con lente) en color cyan/azul claro
+- Texto: "Compatible with camera controller mode - one player only" en blanco ~13px, opacidad 80%
+
+**Botones de acción:**
+- **Botón "DANCE":** Rectángulo grande, ~200px x 60px, fondo rojo/coral (#e84545), bordes redondeados ~8px, texto "DANCE" en blanco bold ~20px centrado. Tiene un borde blanco de ~2px. Efecto hover: se ilumina ligeramente.
+- **Botón "+":** Cuadrado ~50x50px, fondo azul oscuro (#1a3a6b), símbolo "+" blanco centrado, bordes redondeados ~8px
+- **Botón nube (cloud):** Cuadrado ~50x50px, fondo azul oscuro, icono de nube con flecha hacia arriba en blanco, bordes redondeados ~8px
+
+**Avatar del jugador:**
+- Círculo de ~60px de diámetro con borde dorado/amarillo (#ffd700) de ~3px
+- Dentro: avatar personalizado (cara estilizada)
+- Posición: debajo del botón DANCE, ligeramente a la derecha
+
+### 1.3 Zona Inferior — Leaderboards (40% de la altura)
+
+Dividida en dos columnas iguales:
+
+**WORLD LEADERBOARD (izquierda):**
+- Título: "WORLD LEADERBOARD" en blanco bold ~16px, mayúsculas, letter-spacing ~2px
+- Lista de rankings:
+  - **Posición 1:** Badge cuadrado amarillo (#ffd700) con "1" en negro bold ~24px. Avatar circular (~40px) con imagen de panda. Nombre "[devv...] ツ" en blanco ~14px. Subtexto "<> System initialized." en gris claro ~12px. Puntuación "13333" en badge púrpura (#8b2fc9) con texto blanco bold ~18px, bordes redondeados ~6px.
+  - **Posición 2:** Badge cuadrado gris plateado con "2". Avatar circular con personaje femenino. Nombre "SatanicBug" en blanco. Puntuación "13322" en badge púrpura.
+
+**FRIENDS LEADERBOARD (derecha):**
+- Título: "FRIENDS LEADERBOARD" mismo estilo
+- **Posición 1:** Badge amarillo "1". Avatar de unicornio multicolor. Nombre "ig edflwr★" en blanco. Subtexto ":)" en gris. Puntuación "13227" en badge púrpura.
+- **Posición 2:** Badge plateado "2". Avatar de personaje con cabello oscuro. Nombre "Junehh". Puntuación "11375".
+
+### 1.4 Barra Lateral Izquierda
+
+Panel vertical flotante con fondo azul oscuro semitransparente (#1a2a5a con ~80% opacidad), bordes redondeados ~12px, padding ~10px:
+- **Icono Home:** Casa blanca ~24px, en círculo azul más claro
+- **Icono Back:** Flecha "<" blanca ~24px
+- **Icono de red/social:** Tres círculos conectados en blanco ~24px
+- Separados por ~15px verticalmente
+
+### 1.5 Barra Lateral Derecha
+
+Panel similar al izquierdo:
+- **Icono "R":** Letra R en círculo azul
+- **Icono de fuego/llama:** En círculo azul (indicador de racha/streak)
+- **Icono de red:** Tres círculos conectados
+- **Avatar del jugador:** Círculo ~40px con borde verde (indicador online)
+- **Botón "+":** Círculo azul con "+" blanco
+
+---
+
+## 2. PANTALLA DE SELECCIÓN DE CANCIONES (CATÁLOGO)
+
+### 2.1 Layout General
+
+**Fondo:** Mismo degradado púrpura con líneas diagonales
+
+**Barra superior:**
+- **Banner "Spin the wheel":** Rectángulo con fondo degradado de púrpura a magenta, bordes redondeados ~12px. Icono de ruleta amarilla a la izquierda. Texto "Spin the wheel to play a random song!" en blanco bold ~18px. Subtexto "Based on your library filters and owned songs." en blanco ~13px opacidad 70%.
+- **Botón "Surprise me!":** Rectángulo púrpura brillante (#7b2fbe), bordes redondeados ~8px, texto blanco bold ~16px. Icono de varita mágica amarilla a la izquierda.
+
+**Controles de ordenamiento (derecha superior):**
+- "Sorting: by product" — dropdown con fondo azul oscuro, texto blanco, flecha hacia abajo
+- "Order: owned songs first" — dropdown similar
+
+**Filtros (columna derecha):**
+- Panel vertical con fondo azul oscuro semitransparente, bordes redondeados ~12px
+- Cada filtro es una fila:
+  - **CHOREO STYLES:** Texto blanco bold ~14px, flecha ">" a la derecha, fondo azul más oscuro, bordes redondeados ~6px, padding ~12px 16px
+  - **MUSIC GENRES:** Mismo estilo
+  - **MOODS:** Mismo estilo
+  - **DECADES:** Mismo estilo
+  - **ACCESSIBILITY:** Mismo estilo
+  - **RESET FILTERS:** Texto gris claro ~13px, centrado, sin fondo
+
+### 2.2 Grid de Canciones
+
+**Layout:** Grid de 3 columnas, filas de ~200px de altura, gap ~20px
+
+**Card de canción seleccionada ("Anxiety"):**
+- Tamaño: ~300px x 200px
+- Fondo: imagen del escenario (setos verdes, cielo azul)
+- Overlay degradado en la parte inferior: de transparente a negro ~60% opacidad
+- Borde: blanco brillante ~3px (indicador de selección)
+- Sombra: glow blanco/azul alrededor del borde
+- **Contenido:**
+  - Título "Anxiety" en blanco bold ~20px, esquina superior izquierda
+  - "Doechii" en blanco ~14px debajo
+  - Icono de cámara + "Camera controller" en blanco ~12px
+  - Estrellas de dificultad: 5 estrellas vacías (contorno blanco) en la parte inferior
+  - Badge "Difficulty: Medium" con icono de barras en esquina inferior izquierda
+
+**Cards de otras canciones:**
+- Mismo tamaño pero sin borde brillante
+- Opacidad ligeramente menor (~90%)
+- Ejemplos visibles:
+  - **ABRACADABRA (Extreme Version):** Fondo rojo/negro con figura en rojo
+  - **ABRACADABRA:** Fondo azul/cyan con figura
+  - **ALLSTAR:** Fondo colorido con múltiples personajes
+  - **APT. (Graffiti Version):** Fondo urbano con personaje en rosa
+  - **BIG BAD FROG:** Fondo verde con rana
+  - **BLUEY:** Fondo con personajes de la serie Bluey
+
+**Barra lateral izquierda (iconos de navegación):**
+- Mismos iconos que en el menú principal pero en versión más pequeña
+- Icono de búsqueda (lupa) en la parte superior
+- Icono de notificaciones (campana) con punto rojo indicador
+- Icono de casa
+- Icono de música (nota musical)
+- Icono de matraz/laboratorio
+- Icono de persona/usuario
+- Icono de carrito/tienda
+- Icono de engranaje/configuración
+
+---
+
+## 3. PANTALLA DE SELECCIÓN DE COACH
+
+### 3.1 Fondo y Ambiente
+
+**Fondo:** Degradado radial de púrpura oscuro (#1a0533) a magenta (#8b2fa0) con efecto de bokeh — círculos difusos de luz en tonos púrpura claro y rosa, de tamaños variados (20px a 100px de diámetro), con opacidad del 20-40%, distribuidos aleatoriamente. Algunos círculos tienen animación de pulsación lenta (scale de 1.0 a 1.1 en ~3 segundos).
+
+**Líneas diagonales:** Mismo patrón que el fondo principal pero más sutiles.
+
+### 3.2 Elementos UI
+
+**Texto superior izquierdo:**
+- Icono de cámara en círculo cyan
+- "To play using camera controller mode, connect a phone" en blanco ~14px
+- "One player only" en blanco bold ~14px debajo
+
+**Título central:**
+- "Select your Coach" en blanco bold ~36px, centrado en la parte superior
+
+### 3.3 Card del Coach
+
+**Contenedor:**
+- Rectángulo vertical ~280px x 420px
+- Fondo: imagen del coach en el escenario
+- Borde: blanco brillante ~3px con glow azul/cyan
+- Bordes redondeados ~12px
+- Sombra: drop-shadow púrpura con blur ~30px
+
+**Imagen del coach:**
+- Personaje "Thesea" de cuerpo entero
+- Posición: centrada, ocupando ~80% de la altura de la card
+- Pose: brazo derecho levantado saludando, brazo izquierdo extendido hacia el lado
+- Sonrisa, cabello rojo/naranja con diadema azul
+
+**Nombre del coach:**
+- "Thesea" en texto blanco ~18px, centrado en la parte inferior de la card
+- Fondo: barra azul oscuro semitransparente ~280px x 40px, bordes redondeados ~6px
+
+**Avatar del jugador:**
+- Círculo ~50px con borde dorado
+- Posición: superpuesto en el borde derecho de la card, a la altura del pecho del coach
+- Nombre "Cooper" en pequeño badge amarillo debajo del avatar
+
+### 3.4 Animación de Transición
+
+Después de seleccionar:
+- La card del coach se desvanece con scale down (de 1.0 a 0.8) y opacity (de 1.0 a 0) en ~0.5s con easing ease-out
+- Aparece texto "The song will start soon..." en blanco ~16px centrado, con animación de fade in
+- Un círculo de carga (loading spinner) aparece: círculo parcial que rota 360° en ~1s, color blanco/cyan, grosor ~3px
+- Transición a pantalla de carga completa
+
+---
+
+## 4. PANTALLA DE CARGA / TRANSICIÓN
+
+### 4.1 Fondo Animado
+
+**Degradado base:** Púrpura oscuro a magenta, mismo que antes
+
+**Efecto de nebulosa:**
+- Mancha central de color púrpura brillante (#9b30ff) con forma orgánica irregular
+- Tamaño: ~300px x 200px
+- Opacidad: ~60%
+- Animación: pulsación lenta, scale de 1.0 a 1.15 y vuelta en ~4 segundos, con easing ease-in-out
+- Borde difuminado (blur ~40px)
+
+**Partículas:**
+- Pequeños puntos blancos/cyan de ~2-4px de diámetro
+- Distribuidos aleatoriamente por toda la pantalla
+- Opacidad variable: 20-60%
+- Animación: movimiento vertical lento hacia arriba (de bottom a top en ~8-12 segundos), con fade in al aparecer y fade out al desaparecer
+- Algunas partículas tienen trail/estela
+
+**Línea central:**
+- Línea vertical fina (~2px de grosor) en color cyan brillante (#00ffff)
+- Posición: centro horizontal de la pantalla
+- Altura: ~100px
+- Animación: aparece desde el centro expandiéndose hacia arriba y abajo, con glow cyan alrededor
+- En la intersección central: punto brillante cyan de ~8px con glow intenso
+
+**Líneas diagonales:**
+- Mismo patrón de líneas diagonales púrpura, pero más prominentes
+- ~6-8 líneas de ~60px de grosor, opacidad ~25%
+- Ángulo: ~35 grados
+
+### 4.2 Transición al Gameplay
+
+- La nebulosa central se expande rápidamente (scale de 1.0 a 3.0 en ~0.8s)
+- Las líneas diagonales se mueven hacia los bordes
+- Fade to white/bright cyan momentáneo
+- Corte al escenario del juego
+
+---
+
+## 5. ESCENARIO DEL GAMEPLAY — LABERINTO DE SETOS
+
+### 5.1 Cielo y Ambiente
+
+**Cielo:**
+- Degradado vertical: azul claro (#87CEEB) en la parte superior a azul más pálido (#B0E0E6) cerca del horizonte
+- Ocupa ~40% de la altura de la pantalla
+
+**Nubes:**
+- 3-4 nubes blancas esponjosas
+- Forma: grupos de círculos superpuestos (técnica clásica de nubes)
+- Tamaños: ~100-200px de ancho
+- Opacidad: ~90%
+- Posición: distribuidas horizontalmente en el tercio superior
+- Animación: movimiento horizontal muy lento de izquierda a derecha (~1px por segundo)
+
+**Horizonte:**
+- Línea de horizonte verde claro/amarillento (#C8E6A0) que simula campo lejano
+- Ocupa ~10% de la altura, justo debajo del cielo
+
+### 5.2 Título "ANXIETY" en el Escenario
+
+**Letras topiary:**
+- Cada letra es un arbusto recortado en forma de letra mayúscula
+- Color: verde césped (#4a7c2e) con variaciones de tono para dar textura
+- Textura: superficie irregular que simula hojas pequeñas, con puntos más claros (#6a9c4e) y más oscuros (#2a5c1e)
+- Tamaño: cada letra ~120px de altura, ~80-100px de ancho (la W y M son más anchas)
+- Espaciado: ~20px entre letras
+- Posición: centrado horizontalmente, en el tercio superior de la pantalla, "flotando" sobre el laberinto
+- Efecto 3D: las letras tienen profundidad de ~30px hacia atrás, con cara lateral en verde más oscuro (#3a6c1e)
+- Sombra: drop-shadow verde oscuro proyectado hacia abajo (~20px de offset, blur ~10px)
+- Animación: ligero balanceo vertical (bobbing) de ~5px arriba y abajo en ciclo de ~3 segundos
+
+### 5.3 Laberinto de Setos
+
+**Estructura:**
+- Setos altos (~200px en perspectiva) que forman paredes de laberinto
+- Color: verde oscuro (#3a6c1e) con textura de hojas
+- Textura: patrón repetitivo de pequeñas hojas/bolitas verdes en tonos variados (#2a5c1e, #4a7c2e, #5a8c3e)
+- Bordes superiores: irregulares, simulando crecimiento natural
+
+**Paredes visibles:**
+- Pared izquierda: se extiende desde el borde izquierdo hasta ~30% del ancho
+- Pared central-trasera:横跨 el fondo, con una abertura/pasillo en el centro
+- Pared derecha: desde ~70% del ancho hasta el borde derecho
+- Pared del fondo: visible a través de la abertura central
+
+**Suelo:**
+- Césped verde brillante (#7ab84e)
+- Textura: patrón sutil de hierba
+- Sombra de los setos proyectada sobre el suelo (degradado de verde oscuro a transparente)
+
+### 5.4 Elementos Decorativos del Laberinto
+
+**Ojos en los setos:**
+- Múltiples pares de ojos distribuidos por las paredes de setos
+- Cada ojo: círculo blanco (~20px de diámetro) con pupila negra/morada (~10px)
+- Los ojos tienen animación: parpadeo ocasional (scale Y de 1.0 a 0.1 en ~0.1s, luego vuelta)
+- Algunos ojos miran en diferentes direcciones (pupila desplazada)
+- Colores de los ojos: algunos blancos con pupila negra, otros morados (#8b2fc9) con pupila negra
+- Distribución: ~8-10 pares de ojos visibles en diferentes paredes
+
+**Marco de pintura:**
+- Rectángulo ~150px x 100px con marco dorado (#d4a843) de ~8px de grosor
+- Contenido: imagen en miniatura del mismo escenario (efecto Droste/recursive)
+- Posición: en la pared izquierda del seto, a ~1/3 de la altura
+- Sombra: drop-shadow del marco sobre el seto
+
+**Estatuas/bustos púrpura:**
+- Busto clásico (cabeza y hombros) sobre pedestal
+- Color: púrpura (#6b2fa0) con reflejos más claros (#8b4fc0)
+- pedestal: columna cilíndrica con base cuadrada
+- Tamaño: ~80px de altura total
+- Posición: uno en el lado izquierdo, otro en el derecho
+- Los bustos tienen ojos que también parpadean
+
+**Figuras azules en el fondo:**
+- Siluetas de figuras humanas en color azul (#4a6fa5)
+- Posición: dentro del laberinto, al fondo, visibles a través de los pasillos
+- Tamaño: ~60px de altura
+- Animación: movimiento sutil de baile
+
+**Cámara/selfie stick púrpura:**
+- Objeto flotante en forma de cámara con mango
+- Color: púrpura brillante
+- Posición: en el lado derecho, cerca del busto
+- Animación: flotación vertical suave
+
+**Reloj grande (visible en preview):**
+- Reloj de pie estilo grandfather clock
+- Cara blanca con números negros y manecillas negras
+- Marco dorado/madera
+- Posición: lado derecho del escenario
+
+**Botella de ketchup flotante (visible en preview):**
+- Botella amarilla/dorada con etiqueta roja
+- Flotando en el aire con animación de rotación lenta
+- Posición: esquina superior derecha
+
+**Caja de palomitas:**
+- Caja roja y blanca a rayas (estilo cine)
+- Posición: cerca del centro-izquierda
+
+**Escalera:**
+- Escalera de madera apoyada contra el seto del fondo
+- Color: madera clara (#c4a87a)
+
+**Árboles topiary:**
+- Árboles recortados en forma de espiral o bola
+- Color: verde oscuro
+- Posición: sobre los setos, en el fondo
+
+### 5.5 Objetos Flotantes Animados
+
+**Manos púrpura voladoras:**
+- Manos estilizadas en color púrpura/magenta (#9b30ff)
+- Tamaño: ~40px
+- Animación: vuelan de un lado a otro de la pantalla en trayectorias curvas
+- Aparecen y desaparecen con fade in/out
+- ~3-4 manos visibles simultáneamente en diferentes posiciones
+
+**Nube púrpura flotante:**
+- Forma de nube en color púrpura claro (#c9a0ff)
+- Tamaño: ~100px x 60px
+- Posición: en el cielo, lado derecho
+- Animación: movimiento horizontal lento
+
+---
+
+## 6. PERSONAJE COACH — "THESEA"
+
+### 6.1 Apariencia Física
+
+**Cuerpo:**
+- Figura femenina estilizada (proporciones Just Dance: cabeza ligeramente grande, cuerpo alargado)
+- Altura: ~250px en pantalla completa
+- Piel: tono claro (#f5d5c0)
+
+**Cabello:**
+- Color: rojo/naranja brillante (#e84520)
+- Estilo: recogido en dos coletas/buñuelos laterales
+- Diadema: azul cyan (#00bfff) que rodea la cabeza
+- Longitud: llega hasta los hombros
+
+**Rostro:**
+- Ojos: grandes, azul claro, con pestañas marcadas
+- Cejas: delgadas, arqueadas, color rojo oscuro
+- Labios: rojos, sonrisa amplia
+- Maquillaje: estilo teatral, marcado
+
+**Vestimenta:**
+- **Top:** Corsé/bustier azul cyan (#00bfff) con detalles de costuras visibles. Sin mangas. Ajustado al torso.
+- **Pantalones:** Cargo pants púrpura oscuro (#4a1a8a), anchos, que llegan hasta los tobillos. Bolsillos laterales visibles.
+- **Prenda en la cintura:** Camisa/camisa de cuadros atada a la cintura, con patrón de cuadros en rosa/magenta y azul (#c940a0 y #2040a0). Cae sobre los muslos.
+- **Zapatos:** Botas/zapatos azul cyan (#00bfff) que combinan con el top
+- **Guantes:** Guantes amarillos (#ffd700) que llegan hasta la mitad del antebrazo
+
+### 6.2 Animaciones de Baile — Secuencia Detallada
+
+**Posición inicial (0:34-0:36):**
+- Coach aparece desde abajo de la pantalla (slide up de ~200px en ~0.5s)
+- Pose: brazos cruzados sobre el pecho, cabeza ligeramente inclinada
+- Expresión: seria/preocupada (coincide con tema de "ansiedad")
+
+**Movimiento 1 — "Anxiety keep on trying me" (0:50-0:52):**
+- Brazos: se abren hacia los lados, palmas hacia arriba, en gesto de "¿qué puedo hacer?"
+- Hombros: se elevan ligeramente (shrug)
+- Cabeza: se inclina de lado a lado sutilmente
+- Piernas: peso shift de una pierna a otra
+- Duración: ~2 segundos
+- Easing: ease-in-out suave
+
+**Movimiento 2 — Brazos arriba (0:52-0:53):**
+- Brazos: se elevan hacia arriba, codos doblados, manos cerca de las orejas
+- Palmas: hacia adelante, dedos extendidos
+- Cuerpo: ligero balanceo de caderas
+- Cabeza: mira hacia arriba
+- Duración: ~1 segundo
+
+**Movimiento 3 — "I feel it quietly" (0:53-0:54):**
+- Brazos: bajan lentamente a los lados
+- Manos: hacen gesto de "silencio" o calma
+- Cuerpo: se relaja, postura más neutral
+- Cabeza: vuelve al centro
+- Duración: ~1.5 segundos
+
+**Pictogramas de movimiento (esquina inferior derecha):**
+- Figuras stick en color cyan (#00ffff) que muestran los próximos movimientos
+- Tamaño: ~60px de altura cada una
+- Aparecen en secuencia de izquierda a derecha
+- Cada pictograma muestra una pose específica con flechas indicando dirección de movimiento
+- Fondo: rectángulo semitransparente oscuro
+- Animación: el pictograma actual se ilumina/brilla, los siguientes están más tenues
+
+### 6.3 Sistema de Feedback
+
+**"PERFECT" feedback:**
+- Texto "PERFECT" en verde brillante (#00ff00) con glow
+- Aparece cerca del avatar del jugador (esquina superior izquierda)
+- Tamaño: ~24px bold
+- Animación: aparece con scale de 0.5 a 1.2 y luego se settle en 1.0, con fade out después de ~1s
+- Partículas verdes alrededor del texto
+
+**Avatar del jugador en gameplay:**
+- Círculo ~50px en esquina superior izquierda
+- Borde dorado
+- Nombre "Cooper" en badge amarillo
+- Imagen: avatar personalizado
+
+---
+
+## 7. SISTEMA DE PUNTUACIÓN Y UI DURANTE GAMEPLAY
+
+### 7.1 Barra de Progreso de Canción
+
+**Posición:** Parte inferior de la pantalla, ~20px desde el borde
+
+**Estructura:**
+- Línea de tiempo horizontal que ocupa ~80% del ancho
+- Fondo: línea gris oscuro ~4px de grosor
+- Progreso: línea cyan brillante (#00ffff) que se llena de izquierda a derecha
+- Punto actual: círculo cyan ~12px de diámetro con glow
+- Tiempo transcurrido: "0:00 / 4:52" en blanco ~12px a la izquierda
+
+### 7.2 Controles de Video (overlay de YouTube/player)
+
+**Barra inferior:**
+- Fondo: degradado de negro transparente a negro ~60% opacidad
+- Altura: ~40px
+- Elementos de izquierda a derecha:
+  - Botón pause (dos barras verticales blancas)
+  - Botón play (triángulo)
+  - Botón siguiente (flecha)
+  - Indicador de volumen (icono de altavoz)
+  - Tiempo "0:00 / 4:52"
+  - Botón de settings (engranaje)
+  - Botón de pantalla completa
+  - Botones de like/dislike/compartir (derecha)
+
+### 7.3 Letra de la Canción
+
+**Posición:** Esquina inferior izquierda
+
+**Estilo:**
+- Texto blanco ~16px
+- Fuente: sans-serif, legible
+- Línea actual: blanco brillante, opacidad 100%
+- Líneas anteriores: gris claro, opacidad 50%
+- Animación: fade in de cada línea cuando se canta
+
+**Texto visible:**
+- "Anxiety keep on trying me"
+- "I feel it quietly"
+
+---
+
+## 8. PALETA DE COLORES COMPLETA
+
+| Elemento | Color Hex | Uso |
+|----------|-----------|-----|
+| Fondo principal | #1a0533 | Degradado base púrpura oscuro |
+| Fondo secundario | #6b2fa0 | Púrpura medio |
+| Magenta acento | #8b2fc9 | Botones, badges |
+| Cyan brillante | #00bfff | Top del coach, acentos UI |
+| Cyan glow | #00ffff | Pictogramas, progreso |
+| Verde césped | #4a7c2e | Título ANXIETY, setos |
+| Verde claro | #7ab84e | Suelo del escenario |
+| Verde oscuro | #2a5c1e | Sombras de setos |
+| Rojo/coral | #e84545 | Botón DANCE |
+| Amarillo/dorado | #ffd700 | Guantes, bordes de avatar, badges #1 |
+| Naranja/rojo cabello | #e84520 | Cabello del coach |
+| Púrpura coach | #4a1a8a | Pantalones del coach |
+| Rosa/magenta | #c940a0 | Cuadros de camisa |
+| Blanco | #ffffff | Textos principales |
+| Gris claro | #a0a0a0 | Textos secundarios |
+| Azul oscuro UI | #1a3a6b | Badges, paneles |
+| Azul cielo | #87CEEB | Cielo |
+| Dorado marco | #d4a843 | Marco de pintura |
+
+---
+
+## 9. ANIMACIONES Y TIMING
+
+### 9.1 Curvas de Easing Utilizadas
+
+- **ease-in-out:** Para movimientos de baile suaves y naturales
+- **ease-out:** Para apariciones de UI (botones, textos)
+- **ease-in:** Para desapariciones
+- **linear:** Para movimientos de fondo (nubes, partículas)
+- **cubic-bezier(0.68, -0.55, 0.265, 1.55):** Para rebotes suaves (bounce) en elementos de feedback
+
+### 9.2 Duraciones Típicas
+
+- Transiciones de pantalla: 0.5-1.0s
+- Animaciones de baile: 0.5-2.0s por movimiento
+- Pulsaciones de fondo: 3-4s ciclo completo
+- Partículas flotantes: 8-12s de vida
+- Feedback "PERFECT": 1.0s total (0.3s in, 0.4s hold, 0.3s out)
+- Parpadeo de ojos: 0.1s cerrar, 0.1s abrir, cada 3-5s
+
+### 9.3 Transformaciones Comunes
+
+- **Scale:** 0.8 a 1.0 para apariciones, 1.0 a 1.1 para pulsaciones
+- **TranslateY:** ±5-10px para floating/bobbing
+- **TranslateX:** movimiento lento de fondo
+- **Rotate:** ±5 grados para balanceo de título
+- **Opacity:** 0 a 1 para fade in/out
+
+---
+
+## 10. ESTRUCTURA HTML SUGERIDA (Conceptual)
+
+```
+<div class="game-container">
+  <div class="background-layer">
+    <div class="gradient-base"></div>
+    <div class="diagonal-lines"></div>
+    <div class="bokeh-particles"></div>
+    <div class="nebula"></div>
+  </div>
+  
+  <div class="ui-layer">
+    <nav class="sidebar-left">[iconos]</nav>
+    <nav class="sidebar-right">[iconos]</nav>
+    
+    <div class="main-content">
+      <div class="video-preview">
+        <div class="song-info">
+          <h1 class="title-topiary">ANXIETY</h1>
+          <div class="song-meta">[badges]</div>
+          <div class="action-buttons">[DANCE, +, cloud]</div>
+        </div>
+      </div>
+      
+      <div class="leaderboards">
+        <div class="world-lb">[rankings]</div>
+        <div class="friends-lb">[rankings]</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="gameplay-layer">
+    <div class="scene">
+      <div class="sky">[nubes]</div>
+      <div class="maze">[setos, ojos, estatuas]</div>
+      <div class="title-floating">ANXIETY</div>
+      <div class="coach">[Thesea con animaciones]</div>
+      <div class="pictograms">[stick figures]</div>
+      <div class="lyrics">[texto canción]</div>
+      <div class="progress-bar">[timeline]</div>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## 11. DETALLES ADICIONALES DE IMPLEMENTACIÓN
+
+### 11.1 Efecto Topiary para el Título
+
+Para recrear las letras de "ANXIETY" con efecto de arbusto:
+- Usar SVG con filter de turbulencia (feTurbulence) para textura de hojas
+- Múltiples capas de color verde con diferentes opacidades
+- Drop-shadow para profundidad 3D
+- Opción alternativa: usar imágenes de letras con textura de césped
+
+### 11.2 Ojos en los Setos
+
+- Crear componente reutilizable de "ojo"
+- Animación de parpadeo con CSS keyframes
+- Randomizar timing para cada ojo (no todos parpadean al mismo tiempo)
+- Algunos ojos siguen al cursor (opcional)
+
+### 11.3 Sistema de Pictogramas
+
+- Secuencia de imágenes SVG de stick figures
+- Cada pictograma representa un movimiento de 1 segundo
+- Highlight del pictograma actual con glow cyan
+- Transición suave entre pictogramas
+
+### 11.4 Performance Considerations
+
+- Usar `will-change: transform` en elementos animados
+- Limitar número de partículas a ~50 simultáneas
+- Usar `requestAnimationFrame` para animaciones de baile
+- Precargar imágenes del escenario y coach
+
+---
+
+Este análisis cubre todos los elementos visuales observados en el video, desde la estructura de la UI hasta las animaciones más sutiles del escenario y el personaje. Cada sección proporciona suficiente detalle para recrear los elementos en HTML/CSS/JavaScript con fidelidad visual al original.
