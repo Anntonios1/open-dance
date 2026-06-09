@@ -5,3 +5,4 @@ MAPS-HIGHHD/*
 !MAPS-HIGHHD/playlists.json
 .DS_Store
 npm-debug.log*
+test/
